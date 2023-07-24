@@ -1,0 +1,28 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begingroup
+\setlength{\tabcolsep}{15pt} % Default value: 6pt
+\renewcommand{\arraystretch}{0.9}
+\begin{longtable}[c]{cc}
+\caption[Taxonomy of \textit{Musa} genus]{\textbf{Taxonomy of \textit{Musa} genus including 3 example species} (Schoch et al., 2020, WCSP, 2022).}
+\label{tab:TaxonTable}\\
+\hline
+\textbf{Kingdom}     & Plantae       
+\endfirsthead
+%
+\multicolumn{2}{c}%
+{{\bfseries Table \thetable\ continued from previous page}} \\
+\endhead
+%
+\textbf{Phylum}      & Tracheophytes \\ 
+\textbf{Class}       & Magnoliopsida \\ 
+\textbf{Super order} & Lilianae      \\ 
+\textbf{Order}       & Zingiberales  \\ 
+\textbf{Family}      & Musaceae      \\ 
+\textbf{Genus}       & \textit{Musa} \\ 
+\textbf{Species} & \textit{\begin{tabular}[c]{@{}c@{}}M. acuminata,\\
+M. balbisiana, \\
+M. basjoo\end{tabular}} \\ \hline
+\end{longtable}
+\endgroup

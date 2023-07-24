@@ -1,0 +1,75 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{lscape}
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+
+\begin{landscape}
+\begingroup
+\setlength{\tabcolsep}{6pt} % Default value: 6pt
+\renewcommand{\arraystretch}{0.93}
+\begin{longtable}[c]{ccccccccc}
+\caption[Overall alignment rate of all raw reads from each TNAU isolates to fungal and bacterial reference species]{\textbf{Overall alignment rate of all raw reads from each TNAU isolates to fungal and bacterial reference species.} Overall alignment rate determined by Bowtie2 (version 2.4.5). Reference assemblies were downloaded from GenBank.}
+\label{tab:RawReadMapping}\\
+\hline
+\multirow{\textbf{\begin{tabular}[c]{@{}c@{}}Reference \\ Species\end{tabular}}} &
+  \multicolumn{4}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Isolate Bowtie2 Raw Read \\ Overall Alignment Rate\end{tabular}}} &
+  \multirow{\textbf{\begin{tabular}[c]{@{}c@{}}Reference \\ Strain\end{tabular}}} &
+  \multirow{\textbf{\begin{tabular}[c]{@{}c@{}}Reference \\ GenBank \\ Accession\end{tabular}}} &
+  \multirow{\textbf{\begin{tabular}[c]{@{}c@{}}No. of \\ Contigs\end{tabular}}} &
+  \multirow{\textbf{\begin{tabular}[c]{@{}c@{}}Contig \\ N50 \\ (Mb)\end{tabular}}} \\ \cline{2-5}
+ &
+  \textbf{SY-2} &
+  \textbf{S6} &
+  \textbf{S16} &
+  \textbf{S32} &
+   &
+   &
+   &
+   \\ \hline
+\endfirsthead
+%
+\multicolumn{9}{c}%
+{{\bfseries Table \thetable\ continued from previous page}} \\
+\endhead
+%
+\multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}Fusarium oxypsorum \\ f. sp. cubense TR4\end{tabular}}} &
+  54.11\% &
+  8.72\% &
+  53.81\% &
+  15.69\% &
+  UK0001 &
+  GCA\_007994515.1 &
+  15 &
+  4.49 \\
+\multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}Fusarium oxysporum \\ f. sp. cubense R1\end{tabular}}} &
+  54.02\% &
+  H &
+  H &
+  H &
+  160527 &
+  GCA\_005930515.1 &
+  12 &
+  4.88 \\
+\multicolumn{1}{c}{\textit{F. sacchari}} &
+  93.96\% &
+  5.24\% &
+  68.65\% &
+  22.49\% &
+  FS66 &
+  GCA\_017165645.1 &
+  48 &
+  1.97 \\
+\multicolumn{1}{c}{\textit{\begin{tabular}[c]{@{}c@{}}Stenotrophomonas \\ maltophilia\end{tabular}}} &
+  *\footnote{SY-2 was not assessed for \textit{Stenotrophomonas maltophilia} contamination as it was sent as part of a previous sequencing run. } &
+  49.32\% &
+  0.01\% &
+  53.93\% &
+  NCTC10258 &
+  GCA\_900475405.1 &
+  1 &
+  4.5 \\
+  \hline
+\end{longtable}
+\endgroup
+\end{landscape}
