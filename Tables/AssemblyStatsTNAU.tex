@@ -3,12 +3,12 @@
 % \usepackage{longtable}
 % Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
 \begingroup
-\setlength{\tabcolsep}{10pt} % Default value: 6pt
-\renewcommand{\arraystretch}{1.1}
+\setlength{\tabcolsep}{20pt} % Default value: 6pt
+\renewcommand{\arraystretch}{0.7}
 \setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
 \setlength\LTleft{0pt}            % default: \parindent
 \setlength\LTright{0pt}           % default: \fill
-\begin{longtable}[c]{ccp{1.9cm}cp{1.82cm}cp{1.82cm}cp{1.82cm}}
+\begin{longtable}[c]{ccccc}
 \caption[Summary statistics of TNAU genome assemblies.]{\textbf{Summary statistics of TNAU genome assemblies. }\textit{De novo} assemblies generated using SPAdes (version 3.14.1) with all raw reads supplied by Tamil Nadu Agricultural University. }
 \label{tab:TNAUAssemblyStats}\\
 \hline
@@ -20,15 +20,14 @@
 {{\bfseries Table \thetable\ continued from previous page}} \\
 \endhead
 %
-Number of contigs   & 441      &       & 768          &         \\
-Largest contig (Mb) & 871057   &         & 0.88         &          \\
-Total length (Mb)   & 44346466 &        & 44.86        &         \\
-GC (\%)             & 47.97    &        & 47.53        &        \\
-N50 (bp)            & 221769   &        & 234991       &       \\
-N75 (bp)            & 117080   &         & 109641       &       \\
-L50                 & 57       &          & 60           &          \\
-L75                 & 127      &         & 130          &          \\
-Mapped Reads        & 99.6\%   &      & 99.53\%      &     \\
-Mean Coverage       & 73x      &          & 148x         &  \\ \hline   
+Number of contigs   & 441      &   & 768       & 2443     \\
+Largest contig (Mb) & 0.87     &         & 0.88      & 0.77     \\
+Total length (Mb)   & 44.35    &         & 44.86     & 40.92       \\
+GC (\%)             & 47.97    &         & 47.53     & 48.85       \\
+N50 (bp)            & 221769   &         & 234991    & 78523       \\
+L50                 & 57       &         & 60        & 109       \\
+Mapped Reads        & 99.6\%   &         & 99.53\%   &     \\
+Mean Coverage       & 73x      &         & 148x      &  \\ 
+BUSCO               & 99.6\%        &         & 97.4\%    &      \\\hline   
 \end{longtable}
 \endgroup

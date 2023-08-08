@@ -2,60 +2,70 @@
 %INTRODUCTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\textbf{DRAFT:}An Introduction to plant pathogenic Fusarium species}
-No text here yet. 
+\section{An Introduction to plant pathogenic \textit{Fusarium} species}
+
 
 
 
 \subsection{\textit{Fusarium} of banana}
-\subsection{Isolates collected by Tamil Nadu Agricultural University}
 
-- Set story with TNAU isolates and Fusarium in India then add justification for this work!
 
-This chapter presents the assembly and analysis of the genomic characteristics of \textit{Fusarium} isolates (SY-2, S6, S16, and S32) obtained from highly virulent on Cavendish banana plants by collaborators at \ac{tnau}. taxonomic identity and genetic diversity are assessed and suggest that S6 is a \Focub \ac{r1} isolate, while SY-2, S16 and S32 belong to the \textit{F. fujikuroi} species complex. Phylogenetic analysis and \ac{sixg} profiling supported these classifications. Further investigations are necessary to ascertain whether SY-2, S16 and S32 represent a novel species within the \textit{F. fujikuroi} complex. Additionally, bacterial contamination with \textit{Stenotrophomonas} species was detected in S6 and S32 isolates, warranting future studies to explore potential implications on banana pathogenicity.
+\subsubsection{Isolates collected by \acl{tnau}, India}
+
+This chapter presents the assembly and analysis of the genomic characteristics of \textit{Fusarium} isolates (SY-2, S6, S16, and S32) obtained from Cavendish banana plants by collaborators at \acl{tnau}, India (\acs{tnau}). Taxonomic identity and genetic diversity are assessed and suggest that there is a potentially novel species of \textit{Fusarium} infecting banana. Of the isolates sequenced, S6 is a \ac{Focub} \ac{r1} isolate, while SY-2, S16 and S32 belong to the \textit{F. fujikuroi} species complex. Phylogenetic analysis and \ac{sixg} profiling supported these classifications. Isolates SY-2 and S16 are reported as \textit{Fusarium saccahri} isolates, S32, however, represents a novel clade within the \textit{F. fujikuroi} complex. It is important to note, however, that bacterial contamination with \textit{Stenotrophomonas} species was detected in S6 and S32 isolates, warranting future studies to confirm this potentially novel taxon.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %METHODS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Materials and Methods}
-\subsection{Phenotyping and genotyping data supplied by \ac{tnau}.}
+\subsection{Phenotyping and genotyping data supplied by \acl{tnau}.}
 
-Collaborators a \ac{tnau} aimed to assess the diversity of the \Focub in Tamil Nadu and to understand the genetic and molecular basis of resistance against \ac{Focub} in banana through next-generation genomics. A survey was conducted in various banana-growing areas of Tamil Nadu to record symptoms of wilt in different banana cultivars. 
+Collaborators a \ac{tnau} aimed to assess the diversity of the \ac{Focub} in Tamil Nadu and to understand the genetic and molecular basis of resistance against \ac{Focub} in banana through next-generation genomics. A survey was conducted in various banana-growing areas of Tamil Nadu to record symptoms of wilt in different banana cultivars. 
 
-Samples displaying symptoms of \textit{Fusarium} wilt, including the \ac{Focub4} susceptible Cavendish banana variety 'Grande Nain' were collected from the field, and the pathogen was isolated and cultured in the laboratory. The isolates SY-2, S6, S16, and S32, were among the samples collected and analyzed. DNA extraction and PCR amplification were performed to confirm the isolates' identity, including SY-2, S6, S16, and S32. These isolates caused severe disease symptoms in tissue-cultured 'Grand Naine' banana plants and were classified as highly virulent. PCR amplification using race 4-specific primers confirmed that SY-2, S6, S16, and S32 were \ac{Focub4} isolates, capable of infecting Cavendish banana (Work conducted at \ac{tnau} is summarised in Appendix ). Consequently, isolates SY-2, S6, S16, and S32 were sent for sequencing using the \textcolor{red}{WHICH PLATFORM, WHAT STATS CAN WE EXTRACT HERE?}.\footnote{\textcolor{red}{Due to communication challenges with collaborators at TNAU, we have not been able to establish the extraction protocol used to produce the DNA used for sequencing.}}
+Samples displaying symptoms of \textit{Fusarium} wilt, including the \ac{Focub4} susceptible Cavendish banana variety 'Grande Nain' were collected from the field, and the pathogen was isolated and cultured in the laboratory. Among the collected samples, isolates SY-2, S6, S16, and S32 were chosen for further analysis. DNA extraction and PCR amplification were performed to confirm the isolates' identity. 
+
+The isolated strains, S6, S16, and S32, exhibited severe disease symptoms when inoculated into tissue-cultured 'Grand Naine' banana plants and were classified as highly virulent. PCR amplification using race 4-specific primers confirmed that SY-2, S6, S16, and S32 were \ac{Focub4} isolates, capable of infecting Cavendish banana (Work conducted at \ac{tnau} is summarised in Appendix ). Isolates SY-2, S6, S16, and S32 were sequenced using the \textcolor{red}{WHICH PLATFORM, WHAT STATS CAN WE EXTRACT HERE?}.\footnote{\textcolor{red}{Due to communication challenges with collaborators at TNAU, we have not been able to establish the extraction protocol used to produce the DNA used for sequencing.}}
 
 \subsection{Analysis of Raw Read data from TNAU isolates}
 
-The raw Illumina paired-end reads for the \textit{Fusarium} isolates SY-2, S6, S16, and S32, which are reported to be highly virulent on Cavendish banana, were supplied by collaborators at Tamil Nadu Agricultural University, India (TNAU). Following FastQC (Version 0.11.8) (Andrews, 2010) analysis, raw reads were mapped to \Focub TR4 isolate UK0001 (Warmington, \et 2019) reference quality genome using BOWTIE2 (version 2.4.5) (Langmead and Salzberg, 2012). Due to poor mapping rates for some isolates, 1000 raw reads were extracted from each TNAU isolate and searched using NCBI web BLAST (Nih.gov, 2014). 
-Raw reads were then mapped to \Focub R1 isolate 160527(Asai, \et 2019), as well as \textit{Fusairum sacchari} isolate FS66 (Cui \et 2021). Isolates S6, S16 and S32 were also mapped to a reference quality \textit{Stenotrophomonas maltophilia} isolate NCTC10258 genome (GCA\_900475405.1) 
+The raw Illumina paired-end reads for the \textit{Fusarium} isolates SY-2, S6, S16, and S32, which are reported to be highly virulent on Cavendish banana, were supplied by collaborators at \ac{tnau}. Following FastQC (Version 0.11.8) (Andrews, 2010) analysis, raw reads were mapped to \ac{Focub4}  isolate UK0001 (Warmington, \et 2019) reference quality genome using BOWTIE2 (version 2.4.5) (Langmead and Salzberg, 2012). Due to poor mapping rates for some isolates, 1000 raw reads were extracted from each \ac{tnau} isolate and searched using \ac{ncbi} web \ac{blast} (Nih.gov, 2014). 
+Raw reads were then mapped to \ac{Focub1} isolate 160527(Asai, \et 2019), as well as \textit{Fusairum sacchari} isolate FS66 (Cui \et 2021). Isolates S6, S16 and S32 were also mapped to a reference quality \textit{Stenotrophomonas maltophilia} isolate NCTC10258 genome (GCA\_900475405.1) 
 
-\subsection{\textit{De novo} Genome Assembly and Contamination Analysis}
+\subsection{Genome Assembly and Annotation}
 
-A \textit{de novo}assembly was generated for the TNAU isolates using SPAdes (v3.14.1). SPAdes is routinely employed when generating \textit{Fusarium} genomes (see: Armitage, \et 2018; Hudson \et 2020, Tanaka, \et 2022). A custom Python script was developed to remove sequences with <25\% GC content from the assembly (Appendix ~\ref{apx:gcTrimmer.py}). For assemblies with high levels of contamination (S32, S6), only reads mapping to reference genomes were used to generate \textit{de novo} assemblies.
+\subsubsection{\textit{De novo Assembly}}
+A \textit{de novo} assembly was generated for the \ac{tnau} isolates using SPAdes (v3.14.1) following FastQC (Version 0.11.8) (Andrews, 2010) analysis. SPAdes is routinely employed when generating \textit{Fusarium} genomes (see: Armitage, \et 2018; Hudson \et 2020, Tanaka, \et 2022). A custom Python script was developed to remove sequences with <25\% GC content from the assembly (Appendix ~\ref{apx:gcTrimmer.py}). For assemblies with high levels of contamination (S32, S6), only reads mapping to reference genomes were used to generate \textit{de novo} assemblies.
 
-Blobtools (v1.1.1) (Laetsch and Blaxter, 2017) was used for the taxonomic partitioning of the assemblies. The TNAU assemblies were searched against the NCBI nt database using BLASTN and the paired-end raw reads were aligned to each of the assemblies using BOWTIE2 (version 2.4.5). Taxonomic hits were ranked at the species level and default BolbTools settings were used. To extract contigs which have been assigned to a non-\textit{Fusarium} genus by BlobTools, the blob tools output json file was filtered using the blobtools view -r species flag. Contigs assigned to a \textit{Fusarium} species or "no-hit" were then extracted and saved in a separate text file. the blobtools seqfilter command with the default settings then used to extract contigs which had been assigned to \textit{Fusarium} or had "no-hit" (script available in Appendix ~\ref{apx:ContamFilter}).
+\subsubsection{Contamination Analysis and Quality Assessments}
+Blobtools (v1.1.1) (Laetsch and Blaxter, 2017) was used for the taxonomic partitioning of the assemblies. The \ac{tnau} assemblies were searched against the \ac{ncbi} nt database using BLASTN and the paired-end raw reads were aligned to each of the assemblies using BOWTIE2 (version 2.4.5). Taxonomic hits were ranked at the species level using default BolbTools settings. To extract contigs that have been assigned to a non-\textit{Fusarium} genus by BlobTools, the BlobTools output json file was filtered using blobtools view, with the -r species flag provided. Contigs assigned to a \textit{Fusarium} species or "no-hit" were then extracted and saved in a separate text file. The blobtools seqfilter command with the default settings was then used to extract contigs that had been assigned to \textit{Fusarium} or had "no-hit" (script available in Appendix ~\ref{apx:ContamFilter}).
 
-The quality and completeness of the assembled genomes were estimated using Benchmarking Universal Single-Copy Orthologs (BUSCO) with the data set hypocreales\_odb10 (Manni \et 2021). The raw reads were mapped back to the assemblies and a Qualimap assessment was conducted (García-Alcalde \et 2012). Quast (v5.0.2) (Gurevich \et 2013) was used to estimate assembly quality. 
+The quality and completeness of the assembled genomes were estimated using \ac{busco} with the data set hypocreales\_odb10 (Manni \et 2021). The raw reads were mapped back to the assemblies and a Qualimap assessment was conducted (García-Alcalde \et 2012). Quast (v5.0.2) (Gurevich \et 2013) was used to estimate assembly quality statistics. 
+
+\subsubsection{Repetitive Element Identification}
+
+Repetitive elements were identified in each contaminant-filtered assembly using RepeatModeler (version 2.0.4) ((Flynn \et 2020)) including the -LTRStruct option. Once models had been generated, they were combined with the RepeatMasker default fungal database to create a custom repeats library for each isolate. RepeatMasker (version 4.1.5) (Smit, Hubley and Green, 2010) was then used to soft-mask each assembly. 
+
+\subsubsection{Genome Annotation}
+Following masking, the \ac{tnau} genomes were annotated using MAKER textcolor{red}{[VERSION AND CITATION]}. As no RNA sequencing data were available for these isolates, a reference proteome set was generated using the \ac{ncbi} RefSeq nr database, using the search term "Fusarium AND srcdb\_refseq[PROP]" with the protein option selected. MAKER was run using textcolor{red}{[PARAMETERS - Explain that it was trained multiple times and snap was included!]}
+
+\subsection{Identification of pathogen-specific features.}
+
+\subsubsection{Ortholog analysis?}
+
+\subsubsection{SIX gene searches – remove coverage and ident thresholds.}
+\Acp{sixg} from Fol isolate Fol007 were downloaded from the GenBank and were used as a query in a BLASTX search (1e-6 cut-off, 50\% identity and 70\% coverage threshold) against the genomes to check the presence/absence of \acp{sixg} in all reading frames. A binary data matrix indicating presence (“1”) or absence (“0”) was generated using the BLASTX hit data and a heatmap is generated using the R package, Pheatmap.
+
+\subsubsection{\textit{Mimp} identification approach.}
+
+\subsubsection{EffectorP analysis of proteome through SignalP and EffectorP}
 
 
-\subsection{Annotation Approach}
+\subsection{Phylogenetic Analysis of \ac{tnau} isolates}\label{chap2:phylogeny}
 
-\subsection{Phylogenetic Analysis of TNAU isolates}\label{chap2:phylogeny}
-
-The common Fusarium genetic barcodes \textit{Translation elognation factor-1\(\alpha\)} (Tef-1\(\alpha\)) and RPBII were used to generate phylogenies (Edel-Hermann and Lecomte, 2019). Briefly, a Tef-1\(\alpha\) and RPBII sequence database were compiled using available reference sequences from the NCBI database. Homologs of each barcode were identified in each assembly in our database (See section:~\ref{chap3:fusariumdb}) using BLASTN (1e-\textsuperscript{6} cut-off). The locations of hits with greater than 70\% identity and 90\% coverage were recorded, and the sequence within this region was extracted using Samtools (Version 1.15.1). The Tef-1\(\alpha\) and RPBII regions from each genome were concatenated into a single FASTA file for each barcode. The online web server MAFFT (Katoh \et 2019) was used to construct a multiple sequence alignment with the setting “Adjust direction according to the first sequence” to ensure correct alignment and any overhanging regions were trimmed manually. IQ-TREE (Version 2.2.0.3) (Nguyen \et 2015) was used to infer a maximum-likelihood phylogeny using the ultrafast bootstrap setting for 1000 bootstrap replicates and was visualised using iTOL (Letunic and Bork, 2021). 
-
-\subsection{Identification of pathogen-specific regions.}
+The common Fusarium genetic barcodes \ac{tef} and \ac{rbp2} were used to generate phylogenies (Edel-Hermann and Lecomte, 2019). Briefly, a \ac{tef} and \ac{rbp2} sequence database were compiled using available reference sequences from the \ac{ncbi} database. Homologs of each barcode were identified in each assembly in our database (See section:~\ref{chap3:fusariumdb}) using BLASTN (1e-\textsuperscript{6} cut-off). The locations of hits with greater than 70\% identity and 90\% coverage were recorded, and the sequence within this region was extracted using Samtools (Version 1.15.1). The \ac{tef} and \ac{rbp2} regions from each genome were concatenated into a single FASTA file for each barcode. MAFFT (Katoh \et 2019) was used to construct a multiple sequence alignment adjusting the direction according to the first sequence to ensure correct alignment and any overhanging regions were trimmed manually. IQ-TREE (Version 2.2.0.3) (Nguyen \et 2015) was used to infer a maximum-likelihood phylogeny using the ultrafast bootstrap setting for 1000 bootstrap replicates and was visualised using iTOL (Letunic and Bork, 2021). 
 
 
-\subsection{Ortholog analysis?}
-
-\subsection{SIX gene searches – remove coverage and ident thresholds.}
-SIX genes from Fol isolate Fol007 were downloaded from the GenBank were used as a query in a BLASTX search (1e-6 cut-off, 50\% identity and 70\% coverage threshold) against the genomes to check the presence/absence of SIX genes in all reading frames. A binary data matrix indicating presence (“1”) or absence (“0”) was generated using the BLASTX hit data and a heatmap is generated using the R package, Pheatmap.
-
-\subsection{\textit{Mimp} identification approach.}
-
-\subsection{EffectorP analysis of proteome through SignalP and EffectorP}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %RESULTS
@@ -64,46 +74,44 @@ SIX genes from Fol isolate Fol007 were downloaded from the GenBank were used as 
 \section{Results}
 \subsection{Phenotyping and genotyping data supplied by TNUA.}
 
+The collaborative study undertaken by researchers at \acs{tnau} aimed to investigate the diversity of \ac{Focub} in Tamil Nadu and explore the mechanisms of resistance against this pathogen in banana using advanced genomics techniques. The initial step involved a comprehensive survey conducted across various regions in Tamil Nadu to document and assess wilt symptoms in different banana cultivars.
+
+Samples exhibiting symptoms of \textit{Fusarium} wilt, including the widely grown 'Grande Nain' Cavendish banana variety susceptible to \acs{Focub4}, were collected. The isolated pathogen was successfully cultured under controlled laboratory conditions and Koch's postulates confirmed. 
+
+Confirmatory tests based on DNA extraction and PCR amplification were carried out to validate the identity of the isolates. Intriguingly,  isolates S6, S16, and S32 displayed a robust ability to induce severe disease symptoms upon inoculation into tissue-cultured 'Grand Naine' banana plants, and were classified as highly virulent \textcolor{red}{[CAN I USE ONE OF THEIR IMAGES HERE?]}.
+
+Further investigations using race 4-specific primers in PCR amplification confirmed that the isolated S6, S16, and S32 strains belonged to the \acs{Focub4} group, demonstrating their capacity to infect Cavendish banana. As a consequential step, the isolates underwent sequencing. However, specific details such as the sequencing platform and statistical insights derived from the sequencing data remain pending due to ongoing communication challenges with \ac{tnau} collaborators.
+
 \subsection{Analysis of Raw Read data from TNAU isolates}
 
-Raw read mapping of the SY-2, S6, S16, and S32 to the \Focub TR4 UK0001 assembly, produced a 54.11\%, 8.72\%, 53.81\%, and a 15.69\% alignment for all raw reads, respectively (~\ref{tab:RawReadMapping}). 
+Raw read mapping of the SY-2, S6, S16, and S32 to the \ac{Focub4} UK0001 assembly, produced a 54.11\%, 8.72\%, 53.81\%, and a 15.69\% alignment for all raw reads, respectively (~\ref{tab:RawReadMapping}). 
 
-Due to the low alignment rates, unmapped reads were extracted and a random subset of 1000 reads per isolate were searched using NCBI web BLAST (Nih.gov, 2014). For isolates S6 and S32, the majority of hits with >90\% coverage and identity were for \textit{Stenotrophomonas} species, particularly \textit{Stenotrophomonas maltophilia}. Further, the raw S6 and S32 reads show a similar GC\% to the \textit{S. maltophilia }reference genome assembly (GCA\_900475405.1) (S6=63\%, S32=61\%, \textit{S. maltophilia} reference=66.5\%). For isolate S16, the majority of hits for unmapped reads with >90\% coverage and identity against the NCBI database were for \textit{Fusarium fujikuroi}. Isolates S6, S16 and S32 were also mapped to a reference quality \textit{Stenotrophomonas maltophilia} genome due to to the high number of blast hits. 
+Due to the low alignment rates, unmapped reads were extracted and a random subset of 1000 reads per isolate were searched using NCBI web BLAST (Nih.gov, 2014). For isolates S6 and S32, the majority of hits with >90\% coverage and identity were for \textit{Stenotrophomonas} species, particularly \textit{Stenotrophomonas maltophilia}. Further, the raw S6 and S32 reads show a similar GC\% to the \textit{S. maltophilia }reference genome assembly (GCA\_900475405.1) (S6=63\%, S32=61\%, \textit{S. maltophilia} reference=66.5\%). For isolate S16, the majority of hits for unmapped reads with >90\% coverage and identity against the NCBI database were for \textit{Fusarium fujikuroi}. Isolates S6, S16 and S32 were also mapped to a reference quality \textit{Stenotrophomonas maltophilia} genome due to the high number of blast hits. 
 
-Approximately 50\% of raw reads from isolates S6 and S32 mapped to the \textit{S. maltophilia} reference (Table ~\ref{tab:RawReadMapping}). Raw reads from isolate S16 only had a 0.01\% mapping rate to the \textit{S. maltophilia} reference. Raw reads from isolates S6 and S32 had a 5.24\% and 22.49\% mapping rate to the \textit{F. sacchari} reference, respectively, whereas 68.65\% of the raw reads from isolate S16 and 93.96\% of the raw reads from the SY-2 isolate mapped to the \textit{F. sacchari} reference. 
+Approximately 50\% of raw reads from isolates S6 and S32 mapped to the \textit{S. maltophilia} reference (Table ~\ref{tab:RawReadMapping}). Raw reads from isolate S16 only had a 0.01\% mapping rate to the \textit{S. maltophilia} reference. Raw reads from isolates S6 and S32 had a 5.24\% and 22.49\% mapping rate to the \textit{F. sacchari} reference, respectively, whereas 68.65\% of the raw reads from isolate S16 and 93.96\% of the raw reads from the SY-2 isolate mapped to the \textit{F. sacchari} reference.
+
+\textcolor{red}{[MAP TO THE PHILIPPINE FUSARIUM ASSEMBLY TOO?]}
 
 \input{Tables/RawReadMapping}
 
 \subsection{\textit{De novo} Genome Assembly and Contamination Analysis}
 
-As raw reads alignment rate for \Foc Race 1 (Asai, \et 2019) and \Foc TR4 (Warmington, \et 2019) were <55\% for all TNAU isolates, a \textit{de novo} approach using SPAdes (v3.14.1) was used for genome assembly. Following assembly, contigs with \textless 25\% GC content were removed from the assembly SY-2 and S16 assemblies.
+As raw reads alignment rate for \ac{Focub1} (Asai, \et 2019) and \ac{Focub4} (Warmington, \et 2019) were <55\% for all TNAU isolates, a \textit{de novo} approach using SPAdes (v3.14.1) was used for genome assembly. Following assembly, contigs with \textless 25\% GC content were removed from the assembly SY-2 and S16 assemblies. Using SPAdes, the SY-2 and S16 assemblies recorded \textcolor{red}{1,591 [IS THIS RIGHT? IF SO CHANGE THE TABLE]} and 768 contigs and a BUSCO completeness score of C:99.6\% and 97.4\% (hypocreales\_odb10 dataset), respectively. The raw reads from each isolate were mapped back to the assemblies and a Qualimap assessment was conducted; \textcolor{red}{98.88\% [IS THIS RIGHT? IF SO CHANGE THE TABLE]} of the raw reads from the SY-2 isolate mapped back to the \textit{de novo} SY-2 assembly and coverage was estimated to be 73x. In the S16 isolate, 99.53\% of the reads were mapped and mean coverage was estimated to be 148x (Table~\ref{tab:TNAUAssemblyStats}).
 
-Using SPAdes, the SY-2 and S16 assemblies recorded 1,591 and 768 contigs and a BUSCO completeness score of C:99.6\% and 97.4\% (hypocreales\_odb10 dataset), respectively. The raw reads from each isolate were mapped back to the assemblies and a Qualimap assessment was conducted; 98.88\% of the raw reads from the SY-2 isolate mapped back to the \textit{de novo} SY-2 assembly and coverage was estimated to be 70.38x. In the S16 isolate, 99.53\% of the reads were mapped and mean coverage was estimated to be 148x (Table~\ref{tab:TNAUAssemblyStats}).
-
-Although the S6 and S32 isolates had high mapping rates to \textit{S. maltophilia} reference, all raw reads were used to generate a \textit{de novo} assembly to assess for taxonomic partitioning using BlobTools (v1.1.1) (Laetsch and Blaxter, 2017). The S6 and S32 assemblies generated using all raw reads contained 100147 and 1048 contigs, had a BUSCO completeness score of 97.7\% and 97.7\%, were 97.64Mb and 49.62Mb in length and had a GC\% of 46.75 and 49.80, respectively. The S6 assembly is much larger than is typical for a \textit{Fusarium oxysporum} assembly and is highly fragmented. 
-
-\input{Tables/AssemblyStatsTNAU}
+Although the S6 and S32 isolates had high mapping rates to \textit{S. maltophilia} reference, all raw reads were used to generate a \textit{de novo} assembly to assess for taxonomic partitioning using BlobTools (v1.1.1) (Laetsch and Blaxter, 2017). The S6 and S32 assemblies generated using all raw reads contained 100147 and 1048 contigs, had a BUSCO completeness score of 97.7\% and 97.7\%, were 97.64Mb and 49.62Mb in length and had a GC\% of 46.75 and 49.80, respectively. The S6 assembly generated using all raw reads is much larger than is typical for a \ac{Fo} assembly and is highly fragmented. 
 
 Once the \textit{de novo} assembly was generated for each isolate, a Blobtools analysis was conducted. \textit{Fusarium fujikuroi} accounted for the majority of the NCBI TaxID hits for each contig for the S16 isolate and SY-2 assemblies, with \textcolor{red}{[HOW MANY?]} contigs assigned to this species, respectively (Figures). 
 
 \textcolor{red}{[Need image for S16 and SY-2]}
 
-The de novo assemblies generated using all raw reads for the S6 and S32 isolates contained a large number of contigs which had either no hits or were assigned to other genera. For instance, the majority of contigs for the de novo S6 assembly had no hits (Figure 2). Some of the contigs had Fusarium fujikuroi and Fusarium oxysporum assigned. The remaining contigs had greatest sequence similarity to bacterial species. The majority of contigs from the S32 de novo assembly had greatest sequence similarity to Fusarium species, particularly F. fujikuroi, although some contigs were assigned to Stenotrophomonas species, as was observed in the BLAST search of unmapped raw reads (Figure 3). 
+The \textit{de novo} assemblies generated using all raw reads for the S6 and S32 isolates contained a large number of contigs which had either no hits or were assigned to other genera. For instance, the majority of contigs for the de novo S6 assembly had no hits (Figure 2). Some of the contigs had Fusarium fujikuroi and Fusarium oxysporum assigned. The remaining contigs had greatest sequence similarity to bacterial species. The majority of contigs from the S32 de novo assembly had greatest sequence similarity to Fusarium species, particularly \textit{F. fujikuroi}, although some contigs were assigned to Stenotrophomonas species, as was observed in the BLAST search of unmapped raw reads (Figure 3). 
+
+
+\input{Tables/AssemblyStatsTNAU}
 
 \textcolor{red}{[Justification for discard S6 assembly and only using reads – David’s suggestion.]}
 
 \subsection{Annotations Approach}
-
-\subsection{Results from \textit{Tef-1\(\alpha\)} and RBPII Phylogenies and database searches showing novel clade.}
-
-The common Fusarium genetic barcode (Edel-Hermann and Lecomte, C., 2019) was used for phylogenetic analysis of the TNAU isolates alongside other Fusarium species. The SY-2 isolate \ac{Tef} sequence extracted for the phylogeny shared in June 2022 was also included in this phylogeny for reference. For the S16 isolate, the \ac{Tef} sequence was extracted from the GC-trimmed de novo assembly. For the S6 and S32 isolates, the \ac{Tef} sequence was extracted from the de novo assemblies generated using all raw reads as well as the de novo assemblies generated using the reference mapped reads. 
-
-Using a \ac{Tef} database compiled from available reference sequences on the NCBI database, homologs of the \ac{Tef} barcode were identified in each TNAU isolate assembly through BLASTN (1e-6 cut-off). For each assembly, the locations of hits with greater than 70\% identity and 90\% coverage were recorded, and the sequence within this region was extracted using Samtools (Version 1.15.1). Using the extracted \ac{Tef} sequences the Fusariod-ID MSLT database and NCBI BLAST database were searched for similar sequences. For the S16 isolate, the Fusariod MSLT database's best scoring hits were for Fusarium fujikuroi species complex, in which F. sacchari can be found (Table 3). Further, a search of the NCBI database revealed that the \ac{Tef} sequence extracted from the S16 assembly's best scoring hits were for F. sacchari. Searches for the S6 isolate extracted \ac{Tef} sequences suggest this isolate belongs to the F. oxysporum species complex. Although there were matches for F. oxysporum f. sp. cubense \ac{Tef} sequences, these were not in the top 3 results from searches of both databases for the S6 isolate. This may be due to the quality of the S6 assembly. No matches were found for the S32 extracted \ac{Tef} sequences in the Fusarioid-ID MSLT database, and hits against the NCBI GenBank database were for F. fujikuroi isolates. 
-
-The \ac{Tef} regions from each TNAU assembly and the in-house \ac{Tef} database were also used to build a phylogenetic tree. \ac{Tef} sequences were concatenated into a single FASTA file. MAFFT (Katoh \et 2019) was used to construct a multiple sequence alignment with the flag --adjustdirectionaccurately to ensure correct alignment. IQ-TREE (Version 2.2.0.3) was used to infer a maximum-likelihood phylogeny using the ultrafast bootstrap setting for 1000 bootstrap replicates (Nguyen 2015) and was visualised using iTOL (Letunic and Bork, 2021). 
-
-The S16 isolate sits within the same clade as the SY-2 isolate and reference F. sacchari species based on the \ac{Tef} phylogeny which, taken together with the BOWTIE2 raw read mapping data, suggests these isolates may be strains of F. sacchari pathogenic towards banana (Figure 9). Based on the \ac{Tef} phylogeny, the S32 isolate sits alongside the F. sacchari clade. The S6 isolate clusters within one the F. oxysporum f. sp. cubense clades which, alongside the higher mapping rate for to the F. oxysporum f. sp. cubense reference and Fusariod-DB and NCBI BLASTN results, suggests S6 is a F. oxysporum f. sp. cubense isolate (Figure 9). Interestingly, based on the \ac{Tef} phylogeny, S6 clusters within a F. oxysporum f. sp. cubense race 1 clade, but collaborators at TNAU suggest that S6 is highly virulent against Cavendish banana varieties. Further work must be undertaken to improve the quality of the S6 genome assembly and determine which race of F. oxysporum f. sp. cubense the S6 isolate may be, as well as virulence tests comparing S6 to a Race 1 reference with high-quality genome sequence available, such as F. oxysporum f. sp. cubense R1 strain 160527 published by Asai., et al. (2019), to identify changes associated with enhanced virulence.
-
 
 \subsection{Identification of pathogen-specific regions}
 CIRCOS PLOT
@@ -115,9 +123,32 @@ CIRCOS PLOT
   \label{TNAUCircos}
 \end{figure}
 
+\subsection{Results from \acf{tef} and \acf{rbp2} Phylogenies and database searches showing novel clade.}
+
+The common Fusarium genetic barcode (Edel-Hermann and Lecomte, C., 2019) was used for phylogenetic analysis of the TNAU isolates alongside other Fusarium species. The SY-2 isolate \ac{tef} sequence extracted for the phylogeny shared in June 2022 was also included in this phylogeny for reference. For the S16 isolate, the \ac{tef} sequence was extracted from the GC-trimmed de novo assembly. For the S6 and S32 isolates, the \ac{tef} sequence was extracted from the de novo assemblies generated using all raw reads as well as the de novo assemblies generated using the reference mapped reads. 
+
+Using a \ac{tef} database compiled from available reference sequences on the NCBI database, homologs of the \ac{tef} barcode were identified in each TNAU isolate assembly through BLASTN (1e-6 cut-off). For each assembly, the locations of hits with greater than 70\% identity and 90\% coverage were recorded, and the sequence within this region was extracted using Samtools (Version 1.15.1). Using the extracted \ac{tef} sequences the Fusariod-ID MSLT database and NCBI BLAST database were searched for similar sequences. For the S16 isolate, the Fusariod MSLT database's best scoring hits were for \ac{FFSC}, in which \textit{F. sacchari} can be found (Table: ~\ref{tab:Tef1-MLSTdb}). Further, a search of the \ac{ncbi} database revealed that the \ac{tef} sequence extracted from the S16 assembly's best scoring hits were for \textit{F. sacchari}. Searches for the S6 isolate extracted \ac{tef} sequences suggest this isolate belongs to the \ac{FOSC}. Although there were matches for \ac{Focub} \ac{tef} sequences, these were not in the top 3 results from searches of both databases for the S6 isolate. This may be due to the quality of the S6 assembly. No matches were found for the S32 extracted \ac{tef} sequences in the Fusarioid-ID MSLT database, and hits against the \ac{ncbi} GenBank database were for \textit{F. fujikuroi} isolates. 
+
+\input{Tables/TEF1-A-DbSearches}
+
+The \ac{tef} regions from each \ac{tnau} assembly and the in-house \ac{tef} database were also used to build a phylogenetic tree. \Ac{tef} sequences were extracted from the \ac{TNAU} isolates and aligned to \ac{tef} sequences from other \textit{Fusarium} species as we as \ac{Fo} \ac{fsp}. IQ-TREE (Version 2.2.0.3) was used to infer a maximum-likelihood phylogeny using the ultrafast bootstrap setting for 1000 bootstrap replicates (Nguyen 2015). The \ac{tef} phylogeny revealed that the  S16 isolate sits within the same clade as the SY-2 isolate and reference \textit{F. sacchari} species which, taken together with the BOWTIE2 raw read mapping data, suggests these isolates may be strains of \textit{F. sacchari} pathogenic towards banana (Figure: ~\ref{fig:TEF1aPhylo}). 
+
+The S32 isolate appears to be a sister lineage of \textit{F. sacchari}, instead, S32 grouping with the novel \textit{Fusarium} species of, \textit{F. mindanaoense}, recently reported in the Philippines by Nozawa, \et (2023) infecting Cavendish banana. The authors suggest that \textit{F. mindanaoense} is a member of the \ad{FFSC} and has acquired the \ac{sixg} \textit{SIX6}, though they have not confirmed the \textit{SIX6} homolog identified is involved in virulence in their novel species.
+
+The S6 isolate clusters within one the \ac{Focub} clades which, alongside the higher mapping rate for to the \ac{Focub} reference and Fusariod-DB and \ac{ncbi} BLASTN results, suggests S6 is a \ac{Focub} isolate. Interestingly, based on the \ac{tef} phylogeny, S6 clusters within a \ac{Focub1} clade, but collaborators at \ac{tnau} suggest that S6 is highly virulent against Cavendish banana varieties. Due to the high amounts of contamination in the S6 raw data, it is challenging to determine the phylogenetic origin of the S6 isolate. Virulence assays comparing S6 to a \ac{r1} reference with high-quality genome sequence available, such as \ac{Focub1} strain 160527 published by Asai., \et (2019), to identify changes associated with enhanced virulence.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=14cm]{Figures/TEF1aPhylo-Including_mindanoense.png}
+    \caption[\Acl{tef} phylogeny of \acl{tnau} \textit{Fusarium} isolates.]{\textbf{\Acl{tef} phylogeny of \acl{tnau} \textit{Fusarium} isolates.} \Ac{tnau} isolates S16, S32 and SY-2 sit within the\textit{ F. sacchari} clade. The isolates from \ac{tnau} are shown in pink. The \textit{F. sacchari} clade is shown in blue and the \acl{Focub} clades in yellow. \Acl{Focub4} isolates are in orange, and \ac{str4} in brown. \Ac{Focub} \acl{r1} isolates are shown in green. \ac{Focub} isolates from Australia with race not yet determined are shown in grey. Clades representing a single non\-\textit{cubense} \ac{fsp} have been collapsed, denoted by a grey triangle.  Percentages represent values from 1000 bootstrap replicates. The tree is rooted through \textit{Fusarium graminearum} PH-1 \ac{tef}.}
+    \label{fig:TEF1aPhylo}
+\end{figure}
+
 
 \subsection{Ortholog analysis?}
+
 \subsection{SIX gene searches – isolates don’t display the same SIX gene profile.}
+
 \subsection{EffectorP outputs, any effectors which have homology to Foc predicted effectors?}
 
 

@@ -9,8 +9,8 @@
 \setlength{\topmargin}{0.5in}
 \setlength{\headheight}{0in}
 \setlength{\headsep}{0in}
-\setlength{\parindent}{0em}
-\setlength{\parskip}{0.7em}
+\setlength{\parindent}{2.5em}
+\setlength{\parskip}{0em}
 
 
 %%%
@@ -232,63 +232,63 @@
 %%%
 %%% Command from report.cls, (c) LaTeX3 Project.
 %%%
-\def\@makechapterhead#1{%
-  \vspace*{50\p@}%
-  {\parindent \z@ \@chapteralignment \reset@font
-    \ifnum \c@secnumdepth >\m@ne
-      \huge\bfseries \@chapapp{} \thechapter
-      \par
-      \vskip 20\p@
-    \fi
-    \Huge \bfseries #1\par
-    \nobreak
-    \vskip 40\p@
-  }}
-\def\@makeschapterhead#1{%
-  \vspace*{50\p@}%
-  {\parindent \z@ \@chapteralignment
-    \reset@font
-    \Huge \bfseries  #1\par
-    \nobreak
-    \vskip 40\p@
-  }}
+% \def\@makechapterhead#1{%
+%   \vspace*{50\p@}%
+%   {\parindent \z@ \@chapteralignment \reset@font
+%     \ifnum \c@secnumdepth >\m@ne
+%       \huge\bfseries \@chapapp{} \thechapter
+%       \par
+%       \vskip 10\p@
+%     \fi
+%     \Huge \bfseries #1\par
+%     \nobreak
+%     \vskip 10\p@
+%   }}
+% \def\@makeschapterhead#1{%
+%   \vspace*{10\p@}%
+%   {\parindent \z@ \@chapteralignment
+%     \reset@font
+%     \Huge \bfseries  #1\par
+%     \nobreak
+%     \vskip 10\p@
+%   }}
 
-  \renewcommand\listoftables{%
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\listtablename
-      \@mkboth{\uppercase{\listtablename}}{\uppercase{\listtablename}}}%
-    \addcontentsline{toc}{chapter}{\listtablename}
-    \@starttoc{lot}%
-    \if@restonecol\twocolumn\fi
-    }
-\renewcommand\listoffigures{%
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\listfigurename
-      \@mkboth{\uppercase{\listfigurename}}%
-              {\uppercase{\listfigurename}}}%
-    \addcontentsline{toc}{chapter}{\listfigurename}
-    \@starttoc{lof}%
-    \if@restonecol\twocolumn\fi
-    }
-\renewcommand\tableofcontents{%
-    \if@twocolumn
-      \@restonecoltrue\onecolumn
-    \else
-      \@restonecolfalse
-    \fi
-    \chapter*{\contentsname
-        \@mkboth{\uppercase{\contentsname}}{\uppercase{\contentsname}}}%
-    \@starttoc{toc}%
-    \if@restonecol\twocolumn\fi
-    }
+%   \renewcommand\listoftables{%
+%     \if@twocolumn
+%       \@restonecoltrue\onecolumn
+%     \else
+%       \@restonecolfalse
+%     \fi
+%     \chapter*{\listtablename
+%       \@mkboth{\uppercase{\listtablename}}{\uppercase{\listtablename}}}%
+%     \addcontentsline{toc}{chapter}{\listtablename}
+%     \@starttoc{lot}%
+%     \if@restonecol\twocolumn\fi
+%     }
+% \renewcommand\listoffigures{%
+%     \if@twocolumn
+%       \@restonecoltrue\onecolumn
+%     \else
+%       \@restonecolfalse
+%     \fi
+%     \chapter*{\listfigurename
+%       \@mkboth{\uppercase{\listfigurename}}%
+%               {\uppercase{\listfigurename}}}%
+%     \addcontentsline{toc}{chapter}{\listfigurename}
+%     \@starttoc{lof}%
+%     \if@restonecol\twocolumn\fi
+%     }
+% \renewcommand\tableofcontents{%
+%     \if@twocolumn
+%       \@restonecoltrue\onecolumn
+%     \else
+%       \@restonecolfalse
+%     \fi
+%     \chapter*{\contentsname
+%         \@mkboth{\uppercase{\contentsname}}{\uppercase{\contentsname}}}%
+%     \@starttoc{toc}%
+%     \if@restonecol\twocolumn\fi
+%     }
 
 %%%
 %%% Command to print draft version of the thesis.

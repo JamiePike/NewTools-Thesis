@@ -6,7 +6,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{MyStyle,graphicx}
+\usepackage{MyStyle, graphicx}
 \usepackage{xspace}
 \usepackage[svgnames]{xcolor}
 \usepackage{longtable}
@@ -26,43 +26,60 @@
 \usepackage{tablefootnote}
 \usepackage{array}
 \usepackage{bigfoot}
+\usepackage{booktabs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Font
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[doublespacing]{setspace}
 \usepackage[T1]{fontenc}
 \usepackage{newpxtext,newpxmath}
+%Set section headers to not be bold
+\usepackage[titles]{tocloft}
+\renewcommand{\cftsecfont}{\mdseries}
+\renewcommand{\cftsecpagefont}{\mdseries}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Figure and Table Caption colour
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption}
-\captionsetup[table]{labelsep=period, labelfont={bf}, font={small, stretch=1.2}}     %% change 1.2 as you like
-\captionsetup[figure]{labelsep=period, labelfont={bf}, font={small, stretch=1.2}}
+\captionsetup[table]{labelsep=period, labelfont={bf}, font={small, stretch=1.5}}     %% change 1.2 as you like
+\captionsetup[figure]{labelsep=period, labelfont={bf}, font={small, stretch=1.5}}
+\captionsetup{width=0.98\textwidth}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Code Block Formatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
 \usepackage{color}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Set Table Block Formatting
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{caption}
-\captionsetup{width=0.98\textwidth}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\thesisdraft                       %% Uncomment this if you want a draft
+%Chapter Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \leftchapter
+\usepackage{epigraph} %To add quotes
+\usepackage{titlesec}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{10pt}}
+\titleformat{\chapter}[hang]{\Huge}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\titleformat*{\section}{\Large\bfseries}
+\titleformat*{\subsection}{\large\bfseries}
+\titleformat*{\subsubsection}{\normalfont\bfseries}
+
+%Paragraph Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \doublespacing
 \usepackage{blindtext}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
+
+%Header and Footer Style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagestyle{fancy}
-\fancyhf{} % clear existing header/footer entries
-% Place Page X of Y on the right-hand
-% side of the footer
-\fancyfoot[R]{\small Page \thepage \hspace{1pt} of \pageref{LastPage}}
+\fancyhf{}
+\fancyhead[C]{}
+\fancyfoot[R]{\thepage \hspace{1pt} }
 \renewcommand{\headrulewidth}{0pt}
+
 %Prevent footnotes from breaking over multiple pages. 
 \interfootnotelinepenalty=10000
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
@@ -82,8 +99,7 @@
 
 \DeclareAcronym{Focub4}{
   short = \textit{Foc} TR4,
-  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Tropical Race 4,
-}
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Tropical Race 4}
 
 
 \DeclareAcronym{str4}{
@@ -95,6 +111,12 @@
   short = R1,
   long  = Race 1,
 }
+
+\DeclareAcronym{Focub1}{
+  short = \textit{Foc} R1,
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Race 1,
+}
+
 
 \DeclareAcronym{r2}{
   short = R2,
@@ -143,7 +165,7 @@
 
 %Genes, Proteins etc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DeclareAcronym{Tef}{
+\DeclareAcronym{tef}{
   short = \textit{Tef-1}\textalpha,
   long  = \textit{Translation Elongation Factor-1} \textalpha ,
 }
@@ -159,12 +181,12 @@
 }
 
 \DeclareAcronym{te}{
-  short = TEs,
-  long  = transposable elements,
+  short = TE,
+  long  = transposable element,
 }
 
 \DeclareAcronym{mimp}{
-  short = \textit{Mimp},
+  short = \textit{mimp},
   long  = \textit{\underline{m}iniature \underline{imp}ala},
 }
 
@@ -193,6 +215,16 @@
 \DeclareAcronym{AVR}{
 short = AVR,
 long = avirulence,
+}
+
+\DeclareAcronym{ac}{
+short = AC,
+long = accessory chromosome,
+}
+
+\DeclareAcronym{cc}{
+short = CC,
+long = core chromosome,
 }
 
 \DeclareAcronym{bp}{
@@ -276,7 +308,7 @@ long = Machine learning,
 
 \DeclareAcronym{phibase}{
 short = PHI-base,
-long = Pathogen-Host Interaction Database ,
+long = Pathogen-Host Interaction Database,
 }               
 
 %Stats
@@ -311,7 +343,7 @@ long = Liquid chromatography-Mass spectrometry,
 
 \DeclareAcronym{lamp}{
 short = LAMP,
-long = Loop-mediated isothermal amplification,
+long = Loop-mediated isothermal amplification
 }
 
 \DeclareAcronym{pda}{
@@ -326,7 +358,7 @@ long = Potato dextrose broth,
 
 \DeclareAcronym{rpm}{
 short = rpm,
-long = Revolutions per minute ,
+long = Revolutions per minute
 }
 
 \DeclareAcronym{um}{
@@ -346,21 +378,18 @@ long = World Banana Forum}
 
 \DeclareAcronym{ncbi}{
 short = NCBI,
-long = National Center of Biotechnology Information }
+long = National Center of Biotechnology Information, }
 
 \DeclareAcronym{tnau}{
 short = TNAU,
-long = Tamil Nadu Agricultural University, India}
+long = Tamil Nadu Agricultural University }
 
 %Misc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DeclareAcronym{rs}{
-short = RS,
-long = remote sensing}
 
 \DeclareAcronym{rs}{
 short = RS,
-long = remote sensing}
+long = remote sensing }
 
 \DeclareAcronym{uav}{
 short = UAV,
@@ -369,6 +398,11 @@ long = Unmanned aerial vehicle}
 \DeclareAcronym{vi}{
 short = VI,
 long = Vegetation indices}
+
+\DeclareAcronym{ps2}{
+short = PSII,
+long = Photosystem II}
+
 
 
 \newcommand{\et}{\textit{et al., }}
@@ -417,21 +451,28 @@ long = Vegetation indices}
 \pagenumbering{arabic} %! Begins arabic numerals start from page 1.
 \renewcommand{\arraystretch}{1.5} %Extend tables so they're easier to read
 %Set all instances of text below (e.g. \focub) to italicised full version.
-\newcommand{\Focub}{\textit{Fusarium oxysporum} f. sp. \textit{cubense} }
-\newcommand{\Fo}{\textit{Fusarium oxysporum }}
-\newcommand{\Foxy}{\textit{F. oxysporum }}
-\newcommand{\Foc}{\textit{Foc }}
-%Set chapter names and .tex files with chapter content. 
+
+%Set chapter names and .tex files with chapter content.
+\setlength\epigraphwidth{.7\textwidth}
+\setlength{\epigraphrule}{0pt}
+
+    \vspace*{1cm}
+    \epigraph{\protect\singlespace\textit{"The more clearly we can focus our attention on the wonders and realities of the universe about us, the less taste we shall have for destruction."}}{\textemdash \ Rachel Carson, \textit{Silent Spring}}
+    
 \chapter{Introduction}
- \input Chapters/1_Introduction.tex
+    \input Chapters/1_Introduction.tex
+    
 \chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified }
- \input Chapters/2_PotentialNovelFusarium.tex
-\chapter{Improving Genomic Tools for Identifying Virulence Factors in \textit{Fusarium oxysporum formae specialis}}
- \input Chapters/3_ImprovingGenomicTools.tex
+    \input Chapters/2_PotentialNovelFusarium.tex
+    
+\chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}
+    \input Chapters/3_ImprovingGenomicTools.tex
+    
 \chapter{Phenomics: Image-based Analysis of Banana Stresses}
- \input Chapters/4_Phenomics.tex
+    \input Chapters/4_Phenomics.tex
+    
  \chapter{Metabolomics: The Banana-pathogen Metabolome}
- \input Chapters/5_Metabolomics.tex
+    \input Chapters/5_Metabolomics.tex
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
