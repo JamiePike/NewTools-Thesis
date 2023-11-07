@@ -20,6 +20,11 @@
 \usepackage{acro}
 \usepackage{textgreek}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[backend=bibtex, style=authoryear]{biblatex}
+\addbibresource{NewTools.bib} %Import the bibliography file
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Tables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{lscape}
@@ -133,6 +138,12 @@
   short = \textit{Fol},
   long  = \textit{Fusarium oxysporum} f. sp. \textit{lycopersici},
 }
+
+\DeclareAcronym{Fon}{
+  short = \textit{Fol},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{niveum},
+}
+
 
 \DeclareAcronym{fsp}{
   short = f. spp.,
@@ -410,6 +421,7 @@ long = Photosystem II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
 %Start Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\linespread{2} 
 \begin{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -457,10 +469,8 @@ long = Photosystem II}
 \setlength\epigraphwidth{.7\textwidth}
 \setlength{\epigraphrule}{0pt}
 
-    \vspace*{1cm}
-    \epigraph{\protect\singlespace\textit{"The more clearly we can focus our attention on the wonders and realities of the universe about us, the less taste we shall have for destruction."}}{\textemdash \ Rachel Carson, \textit{Silent Spring}}
     
-\chapter{Introduction}
+\chapter{General Introduction} 
     \input Chapters/1_Introduction.tex
     
 \chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified }
@@ -475,10 +485,13 @@ long = Photosystem II}
  \chapter{Metabolomics: The Banana-pathogen Metabolome}
     \input Chapters/5_Metabolomics.tex
 
+\chapter{References}
+    \printbibliography 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Appendices
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix                            %% this will do the appendices
 \chapter{Scripts used for \textit{Fusarium} Genome Assembly and Analysis}
 For all of the scripts written as part of the genome assembly and analysis of the TNAU \textit{Fusarium} isolates, SY-2, S6, S16, and S32. 
@@ -488,19 +501,19 @@ For all of the scripts written as part of the genome assembly and analysis of th
 For all of the scripts written for the \textit{mimp}-associated effector identification pipeline, as well as scripts used for the additional analysis of the \textit{Fusarium} database used in the identification of effector candidates. 
 \input{Appendices/Chap3-CodeSections}
 
-%\bibliographystyle{harvard}
-%\bibliography{Bibliogrphy}            %% Start your bibliography here;
+\bibliographystyle{harvard}
+\bibliography{Bibliogrphy}            %% Start your bibliography here;
 
-                                 %! with sample.bib as your bibliography file. You can
-                               %% also use:
-                %\begin{thebibliography}
-                 %\bibitem{Bibliography/NewTools Bib.bib}
-                %\end{thebibliography}
-                               %% to generate your bibliography.
+                                 ! with sample.bib as your bibliography file. You can
+                               % also use:
+                \begin{thebibliography}
+                 \bibitem{Bibliography/NewTools Bib.bib}
+                \end{thebibliography}
+                               % to generate your bibliography.
 
-%\begin{thesisauthorvita}             %% Write your vita here; it can be
-%                                     %% anything in LaTeX2e par-mode.
-%\end{thesisauthorvita}               %%
+\begin{thesisauthorvita}             %% Write your vita here; it can be
+                                    %% anything in LaTeX2e par-mode.
+\end{thesisauthorvita}               %%
 
 
 
