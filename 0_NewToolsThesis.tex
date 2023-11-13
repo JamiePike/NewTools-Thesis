@@ -1,24 +1,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Document Type
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[11pt,a4paper]{report}  
+\documentclass[12pt, a4paper]{report}  %Remove "twoside" for pdf version, keep for printing. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{MyStyle, graphicx}
+%\usepackage{MyStyle}
+\usepackage{graphicx}
 \usepackage{xspace}
 \usepackage[svgnames]{xcolor}
 \usepackage{longtable}
 \usepackage{amsmath}     %!  setspace is used to control linepacing
-\usepackage[square]{natbib} %! needed for Harvard style of references.
+%\usepackage[square]{natbib} %! needed for Harvard style of references.
 \usepackage{enumerate}  %! used for the library form, but you might find 
 \usepackage[hidelinks]{hyperref}
-\usepackage[top=2.54cm, left=4cm, right=2.54cm]{geometry}
+\usepackage[a4paper,width=150mm,top=30mm,bottom=25mm]{geometry} %Remove "left=4cm" for pdf version, keep for printing. 
 \usepackage{multicol}
 \usepackage{amssymb}
 \usepackage{acro}
 \usepackage{textgreek}
+\usepackage{afterpage}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -33,6 +35,8 @@
 \usepackage{bigfoot}
 \usepackage{booktabs}
 \usepackage{threeparttable}
+\usepackage{multirow} 
+\usepackage{caption} % Add this line for caption customization
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Font
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,12 +65,12 @@
 %\thesisdraft                       %% Uncomment this if you want a draft
 %Chapter Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\leftchapter
+%%\leftchapter
 \usepackage{epigraph} %To add quotes
 \usepackage{titlesec}
 \definecolor{gray75}{gray}{0.75}
 \newcommand{\hsp}{\hspace{10pt}}
-\titleformat{\chapter}[hang]{\Huge}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\titleformat{\chapter}{\Huge}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 \titleformat*{\section}{\Large\bfseries}
 \titleformat*{\subsection}{\large\bfseries}
 \titleformat*{\subsubsection}{\normalfont\bfseries}
@@ -80,12 +84,15 @@
 
 %Header and Footer Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xcolor}
+\definecolor{headergray}{RGB}{128,128,128} % Define the grey color
+\renewcommand{\headrule}{\textcolor{headergray}{\rule{\headwidth}{0pt}}} % Change the color of the header rule
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[C]{}
-\fancyfoot[R]{\thepage \hspace{1pt} }
-\renewcommand{\headrulewidth}{0pt}
-
+\fancyhead{}
+\fancyhead[R]{\textcolor{headergray}{New Tools for the Identification of Fusarium Wilt in Banana}}
+\fancyfoot{}
+\fancyfoot[L]{\thepage}
 %Prevent footnotes from breaking over multiple pages. 
 \interfootnotelinepenalty=10000
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
@@ -174,6 +181,10 @@
   short = \textit{Xvm},
   long  = \textit{Xanthomonas   campestris }pv. \textit{musacearum},
 } 
+
+\DeclareAcronym{fwb}{
+  short = FWB,
+  long  = \textit{Fusarium} wilt of banana} 
 
 %Genes, Proteins etc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -428,7 +439,8 @@ long = Photosystem II}
 %Title Pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Preamble/TitlePage}
-
+\newpage
+\thispagestyle{empty} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fromatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -440,21 +452,21 @@ long = Photosystem II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Prelimary Sections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{thesisacknowledgments}        
-\input Preamble/0.1_Acknowledgments.tex       
-\end{thesisacknowledgments}
+% \begin{thesisacknowledgments}        
+% \input Preamble/0.1_Acknowledgments.tex       
+% \end{thesisacknowledgments}
 
-\begin{thesisdeclaration}       
-\input Preamble/0.2_Declarations.tex 
-\end{thesisdeclaration}
+% \begin{thesisdeclaration}       
+% \input Preamble/0.2_Declarations.tex 
+% \end{thesisdeclaration}
 
-\begin{thesisabstract}              
-  \begin{singlespace}    
-    \input Preamble/0.3_Abstract.tex      
- \end{singlespace}
-\end{thesisabstract}
+% \begin{thesisabstract}              
+%   \begin{singlespace}    
+%     \input Preamble/0.3_Abstract.tex      
+%  \end{singlespace}
+% \end{thesisabstract}
 
-%\begin{thesisabbreviations}      
+% %\begin{thesisabbreviations}      
 \printacronyms[name=Abbreviations]
 %\end{thesisabbreviations}
 
@@ -465,25 +477,24 @@ long = Photosystem II}
 \renewcommand{\arraystretch}{1.5} %Extend tables so they're easier to read
 %Set all instances of text below (e.g. \focub) to italicised full version.
 
-%Set chapter names and .tex files with chapter content.
-\setlength\epigraphwidth{.7\textwidth}
-\setlength{\epigraphrule}{0pt}
-
+% %Set chapter names and .tex files with chapter content.
+% \setlength\epigraphwidth{.7\textwidth}
+% \setlength{\epigraphrule}{0pt}
     
-\chapter{General Introduction} 
-    \input Chapters/1_Introduction.tex
+\chapter{General Introduction}
+    \input{Chapters/1_Introduction.tex}
     
-\chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified }
-    \input Chapters/2_PotentialNovelFusarium.tex
+% \chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified}
+%     \input{Chapters/2_PotentialNovelFusarium.tex}
     
-\chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}
-    \input Chapters/3_ImprovingGenomicTools.tex
+% \chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}
+%     \input{Chapters/3_ImprovingGenomicTools.tex}
     
-\chapter{Phenomics: Image-based Analysis of Banana Stresses}
-    \input Chapters/4_Phenomics.tex
+% \chapter{Phenomics: Image-based Analysis of Banana Stresses}
+%     \input{Chapters/4_Phenomics.tex}
     
- \chapter{Metabolomics: The Banana-pathogen Metabolome}
-    \input Chapters/5_Metabolomics.tex
+%  \chapter{Metabolomics: The Banana-pathogen Metabolome}
+%     \input{Chapters/5_Metabolomics.tex}
 
 \chapter{References}
     \printbibliography 

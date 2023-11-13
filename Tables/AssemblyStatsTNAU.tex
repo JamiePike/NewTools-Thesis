@@ -2,6 +2,7 @@
 % \usepackage{multirow}
 % \usepackage{longtable}
 % Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{landscape}
 \begingroup
 \setlength{\tabcolsep}{20pt} % Default value: 6pt
 \renewcommand{\arraystretch}{0.9}
@@ -9,10 +10,11 @@
 \setlength\LTleft{0pt}            % default: \parindent
 \setlength\LTright{0pt}           % default: \fill
 \begin{longtable}[c]{ccccc}
+\captionsetup{width=\linewidth} 
 \caption[Summary statistics of TNAU genome assemblies.]{\textbf{Summary statistics of TNAU genome assemblies. }\textit{De novo} assemblies generated using SPAdes (version 3.14.1) with all raw reads supplied by Tamil Nadu Agricultural University. }
 \label{tab:TNAUAssemblyStats}\\
 \hline
-\multirow{\textbf{\begin{tabular}[c]{@{}l@{}}Assembly\\Statistic\end{tabular}}} & \multicolumn{4}{c}{\textbf{TNAU Isolate Assembly}} \\ \cline{2-5} 
+\multirow{2}{*}{\textbf{\begin{tabular}[c]{@{}l@{}}Assembly\\Statistic\end{tabular}}} & \multicolumn{4}{c}{\textbf{TNAU Isolate Assembly}} \\ \cline{2-5} 
                     & \textbf{SY-2}    & \textbf{S6} & \textbf{S16} & \textbf{S32} \\ \hline
 \endfirsthead
 %
@@ -20,16 +22,18 @@
 {{\bfseries Table \thetable\ continued from previous page}} \\
 \endhead
 %
-Number of contigs   & 441      &                & 768       & 2443        \\
-Largest contig (Mb) & 0.87     &                & 0.88      & 0.77        \\
-Total length (Mb)   & 44.35    &                & 44.86     & 40.92       \\
-GC (\%)             & 47.97    &                & 47.53     & 48.85       \\
-N50 (bp)            & 221769   &                & 234991    & 78523       \\
-L50                 & 57       &                & 60        & 109         \\
-Mapped Reads (\%)   & 99.6     &                & 99.53     &             \\
-Mean Coverage       & 73x      &                & 148x      &             \\ 
-BUSCO (\%)          & 99.6     &                & 97.4      & 97.4        \\\hline  
-
-
+Number of contigs               & 441      & 6048           & 768            & 2443           \\
+Largest contig (Mb)             & 0.87     & 0.43           & 0.88           & 0.77           \\
+Total length (Mb)               & 44.35    & 47.23          & 44.86          & 40.92          \\
+GC (\%)                         & 47.97    & 47.87          & 47.53          & 48.85          \\
+N50 (bp)                        & 221769   & 92555          & 234991         & 78523          \\
+L50                             & 57       & 148            & 60             & 109            \\
+Mapped Reads (\%)               & 99.6     & 9.9            & 99.53          & 24.01          \\
+Mean Coverage                   & 73x      & 16x            & 148x           & 60x            \\ 
+BUSCO (\%)                      & 99.6     & 97.5           & 97.4           & 97.4           \\
+Bases soft masked(Mb)           &          & 2.115 (4.48\%) & 1.853 (4.13\%) & 0.6124 (1.50\%)\\
+Predicted protein coding genes  &          &                &                &                \\
+\hline  
 \end{longtable}
 \endgroup
+\end{landscape}

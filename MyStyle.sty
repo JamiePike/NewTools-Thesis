@@ -6,11 +6,11 @@
 \setlength{\oddsidemargin}{0.7in}
 \setlength{\evensidemargin}{0.7in}
 \setlength{\textwidth}{5.50in}
-\setlength{\topmargin}{0.5in}
-\setlength{\headheight}{0in}
-\setlength{\headsep}{0in}
-\setlength{\parindent}{2.5em}
-\setlength{\parskip}{0em}
+\setlength{\topmargin}{2in}
+\setlength{\headheight}{2in}
+\setlength{\headsep}{0.35 in}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
 
 
 %%%
@@ -82,7 +82,7 @@
 
 
 \newenvironment{thesisacknowledgments}
-    {%\doublespace\small\normalsize
+    {\doublespace\small\normalsize
      \chapter*{\@thesisacknowledgmenthead
          \@mkboth{\uppercase{\@thesisacknowledgmenthead}}
                  {\uppercase{\@thesisacknowledgmenthead}}}
@@ -97,7 +97,7 @@
 %%% Environment to generate declarations page.
 %%%
 \newenvironment{thesisdeclaration}
-    {%\doublespace\small\normalsize
+    {\doublespace\small\normalsize
      \chapter*{\@thesisdeclarationhead
          \@mkboth{\uppercase{\@thesisdeclarationhead}}
                  {\uppercase{\@thesisdeclarationhead}}}
@@ -231,27 +231,27 @@
 
 %%%
 %%% Command from report.cls, (c) LaTeX3 Project.
-%%%
-% \def\@makechapterhead#1{%
-%   \vspace*{50\p@}%
-%   {\parindent \z@ \@chapteralignment \reset@font
-%     \ifnum \c@secnumdepth >\m@ne
-%       \huge\bfseries \@chapapp{} \thechapter
-%       \par
-%       \vskip 10\p@
-%     \fi
-%     \Huge \bfseries #1\par
-%     \nobreak
-%     \vskip 10\p@
-%   }}
-% \def\@makeschapterhead#1{%
-%   \vspace*{10\p@}%
-%   {\parindent \z@ \@chapteralignment
-%     \reset@font
-%     \Huge \bfseries  #1\par
-%     \nobreak
-%     \vskip 10\p@
-%   }}
+%%
+\def\@makechapterhead#1{%
+  \vspace*{50\p@}%
+  {\parindent \z@ \@chapteralignment \reset@font
+    \ifnum \c@secnumdepth >\m@ne
+      \huge\bfseries \@chapapp{} \thechapter
+      \par
+      \vskip 10\p@
+    \fi
+    \Huge \bfseries #1\par
+    \nobreak
+    \vskip 10\p@
+  }}
+\def\@makeschapterhead#1{%
+  \vspace*{10\p@}%
+  {\parindent \z@ \@chapteralignment
+    \reset@font
+    \Huge \bfseries  #1\par
+    \nobreak
+    \vskip 10\p@
+  }}
 
 %   \renewcommand\listoftables{%
 %     \if@twocolumn

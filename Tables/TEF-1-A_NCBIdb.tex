@@ -1,0 +1,24 @@
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+% \usepackage{graphicx}
+% \usepackage{lscape}
+\begin{landscape}
+\begin{table}[]
+\centering
+\captionsetup{width=\linewidth} 
+\caption{[\Ac{tnau}\acf{tef} \acf{ncbi} and Fusariod-ID MSLT database searches.]\textbf{Best hits of extracted \acf{tef} sequences from the \acf{tnau} isolate \textit{de novo} assemblies against the Fusariod-ID MSLT database and \ac{ncbi}}}
+\label{tab:Tef1-NCBIdb}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{cccc}
+\multicolumn{1}{l}{\multirow{2}{*}{\textbf{TNAU Isolate Assembly}}} & \multicolumn{3}{c}{\textbf{NCBI database}}                                        \\ \cline{2-4} 
+\multicolumn{1}{l}{}                                       & Hit 1                    & Hit 2                    & Hit 3                       \\ \hline
+\textbf{S6 All reads}                                      & \textit{F. oxysporum} isolate 170 & \textit{F. oxysporum} f. sp. \textit{koae} & \textit{F. oxysporum} f. sp. \textit{dianthi} \\
+\textbf{S6 \textit{F. oxysporum}  Reads}                            & \textit{F. oxysporum} isolate 170 & \textit{F. oxysporum} f. sp. \textit{koae} & \textit{F. oxysporum} f. sp. \textit{dianthi} \\
+\textbf{S16}                                               & \textit{F. sacchari} CBS:147.25   & \textit{F. sacchari} NRLL 66326  & \textit{F. globosum} CBS:428.97      \\
+\textbf{S32 All reads}                                     & \textit{F. fujikuroi} I1.3        & \textit{F. fujikuroi} IMI 58289   & \textit{F. fujikuroi} Augusto2       \\
+\textbf{S32 \textit{F. oxysporum}  Reads}                           & \textit{F. fujikuroi} I1.3        & \textit{F. fujikuroi} IMI 58289   & \textit{F. fujikuroi} Augusto2       \\
+\textbf{S32 \textit{F. sacchari} reads}                             & \textit{F. fujikuroi} I1.3        & \textit{F. fujikuroi} IMI 58289   & \textit{F. fujikuroi} Augusto2      
+\end{tabular}%
+}
+\end{table}
+\end{landscape}
