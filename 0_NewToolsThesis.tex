@@ -92,7 +92,7 @@
 \fancyhead{}
 \fancyhead[R]{\textcolor{headergray}{New Tools for the Identification of Fusarium Wilt in Banana}}
 \fancyfoot{}
-\fancyfoot[L]{\thepage}
+\fancyfoot[C]{\thepage}
 %Prevent footnotes from breaking over multiple pages. 
 \interfootnotelinepenalty=10000
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
@@ -123,6 +123,10 @@
 \DeclareAcronym{r1}{
   short = R1,
   long  = Race 1,
+}
+\DeclareAcronym{r4}{
+  short = R4,
+  long  = Race 4,
 }
 
 \DeclareAcronym{Focub1}{
@@ -426,8 +430,6 @@ long = Vegetation indices}
 short = PSII,
 long = Photosystem II}
 
-
-
 \newcommand{\et}{\textit{et al., }}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
 %Start Document
@@ -438,13 +440,15 @@ long = Photosystem II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Title Pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{Preamble/TitlePage}
+% \input{Preamble/TitlePage}
 \newpage
 \thispagestyle{empty} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fromatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagenumbering{roman} %! Begins roman numerals start from page i.
+Title Pages
+
 \clearpage
 \tableofcontents                     
 \listoftables                     
@@ -469,7 +473,7 @@ long = Photosystem II}
 % %\begin{thesisabbreviations}      
 \printacronyms[name=Abbreviations]
 %\end{thesisabbreviations}
-
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -500,34 +504,17 @@ long = Photosystem II}
     \printbibliography 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Appendices
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\appendix                            %% this will do the appendices
-\chapter{Scripts used for \textit{Fusarium} Genome Assembly and Analysis}
-For all of the scripts written as part of the genome assembly and analysis of the TNAU \textit{Fusarium} isolates, SY-2, S6, S16, and S32. 
-\input{Appendices/Chap2-CodeSections}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \appendix                            %% this will do the appendices
+% \chapter{Scripts used for \textit{Fusarium} Genome Assembly and Analysis}
+% For all of the scripts written as part of the genome assembly and analysis of the TNAU \textit{Fusarium} isolates, SY-2, S6, S16, and S32. 
+% \input{Appendices/Chap2-CodeSections}
 
-\chapter{Scripts used as part of Maei Pipeline and Subsequent Analysis}
-For all of the scripts written for the \textit{mimp}-associated effector identification pipeline, as well as scripts used for the additional analysis of the \textit{Fusarium} database used in the identification of effector candidates. 
-\input{Appendices/Chap3-CodeSections}
-
-\bibliographystyle{harvard}
-\bibliography{Bibliogrphy}            %% Start your bibliography here;
-
-                                 ! with sample.bib as your bibliography file. You can
-                               % also use:
-                \begin{thebibliography}
-                 \bibitem{Bibliography/NewTools Bib.bib}
-                \end{thebibliography}
-                               % to generate your bibliography.
-
-\begin{thesisauthorvita}             %% Write your vita here; it can be
-                                    %% anything in LaTeX2e par-mode.
-\end{thesisauthorvita}               %%
-
-
-
+% \chapter{Scripts used as part of Maei Pipeline and Subsequent Analysis}
+% For all of the scripts written for the \textit{mimp}-associated effector identification pipeline, as well as scripts used for the additional analysis of the \textit{Fusarium} database used in the identification of effector candidates. 
+% \input{Appendices/Chap3-CodeSections}
 
 \end{document}                       %% Done.
 
