@@ -2,10 +2,10 @@
 % \usepackage{multirow}
 % \usepackage{longtable}
 % Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{landscape}
+%\begin{landscape}
 \begingroup
-\setlength{\tabcolsep}{20pt} % Default value: 6pt
-\renewcommand{\arraystretch}{0.9}
+\setlength{\tabcolsep}{3pt} % Default value: 6pt
+\renewcommand{\arraystretch}{0.7}
 \setlength\LTcapwidth{\textwidth} % default: 4in (rather less than \textwidth...)
 \setlength\LTleft{0pt}            % default: \parindent
 \setlength\LTright{0pt}           % default: \fill
@@ -22,7 +22,7 @@
 {{\bfseries Table \thetable\ continued from previous page}} \\
 \endhead
 %
-Number of contigs               & 441      & 6048           & 768            & 2443           \\
+Number of contigs               & 481      & 6048           & 768            & 2443           \\
 Largest contig (Mb)             & 0.87     & 0.43           & 0.88           & 0.77           \\
 Total length (Mb)               & 44.35    & 47.23          & 44.86          & 40.92          \\
 GC (\%)                         & 47.97    & 47.87          & 47.53          & 48.85          \\
@@ -32,8 +32,8 @@ Mapped Reads (\%)               & 99.6     & 9.9            & 99.53          & 2
 Mean Coverage                   & 73x      & 16x            & 148x           & 60x            \\ 
 BUSCO (\%)                      & 99.6     & 97.5           & 97.4           & 97.4           \\
 Bases soft masked(Mb)           &          & 2.115 (4.48\%) & 1.853 (4.13\%) & 0.6124 (1.50\%)\\
-Predicted protein coding genes  &          &                &                &                \\
+Predicted protein coding genes  &          &                & 15727          &                \\
 \hline  
 \end{longtable}
 \endgroup
-\end{landscape}
+%\end{landscape}

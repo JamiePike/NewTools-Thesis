@@ -1,22 +1,20 @@
 % Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
 % \usepackage{multirow}
 % \usepackage{graphicx}
-% \usepackage{lscape}
-
-
-\begin{landscape}
-\begin{table}[]
-\captionsetup{width=\linewidth} % Set the width of the caption to match the table
-\caption{[Overall alignment rate of all raw reads from each TNAU isolates to fungal and bacterial reference species]{\textbf{Overall alignment rate of all raw reads from each TNAU isolates to fungal and bacterial reference species.}} Overall alignment rate determined by Bowtie2 (version 2.4.5). Reference assemblies were downloaded from GenBank.}
+\begin{table}[h!]
+\caption[Overall alignment rate of all raw reads from each TNAU isolates to fungal and bacterial reference species]{{\textbf{Overall alignment rate of all raw reads from each TNAU isolates to fungal and bacterial reference species.}} Overall alignment rate determined by Bowtie2 (version 2.4.5). Reference assemblies were downloaded from GenBank: \ac{Focub4} isolate UK0001 (\href{https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_007994515.1/}{GCA\_007994515.1}), \ac{Focub1} isolate 160527 (\href{https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_005930515.1/}{GCA\_005930515.1}), \textit{Fusairum sacchari} isolate FS66 (\href{https://www.ncbi.nlm.nih.gov/datasets/genome/GCA_017165645.1/}{GCA\_017165645.1}), \textit{Stenotrophomonas maltophilia} isolate NCTC10258 (\href{https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_900475405.1/}{GCA\_900475405.1}).}
 \label{tab:RawReadMapping}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{lccccccc}
-\multicolumn{1}{c}{\multirow{2}{*}{Species}} & \multicolumn{3}{c}{Bowtie2 Alignment Rate} & \multirow{2}{*}{Strain} & \multirow{2}{*}{GenBank  Accession} & \multirow{2}{*}{No. of Contigs} & \multirow{2}{*}{Contig N50 (Mb)} \\ \cline{2-4}
-\multicolumn{1}{c}{}                         & S6           & S16          & S32          &                         &                                     &                                 &                                  \\ \hline
-\textit{F. oxysporum f. sp. cubense (TR4)}   & 8.72\%       & 53.81\%      & 15.69\%      & UK0001                  & GCA\_007994515.1                    & 15                              & 4.49                             \\
-\textit{F. sacchari}                         & 5.24\%       & 68.65\%      & 22.49\%      & FS66                    & GCA\_017165645.1                    & 48                              & 1.97                             \\
-\textit{Stenotrophomonas maltophilia}        & 49.32\%      & 0.01\%       & 53.93\%      & NCTC10258               & GCA\_900475405.1                    & 1                               & 4.5                              \\ \hline
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{cccccc}
+\hline
+\multirow{2}{*}{\textbf{Reference Species}} & \multirow{2}{*}{\textbf{Strain}} & \multicolumn{4}{c}{\textbf{BOWTIE2 Alignment Rate}} \\ \cline{3-6} 
+ &  & \textbf{S6} & \textbf{S16} & \textbf{S32} & \textbf{SY-2} \\ \cline{1-2}
+\textit{Fo.} f. sp. \textit{cubense} (TR4) & UK0001 & 8.72\% & 53.81\% & 15.69\% & 54.11\% \\
+\textit{Fo.} f. sp. \textit{cubense} (R1) & 160527 & 9.90\% & 53.67\% & 15.51\% & 54.02\% \\
+\textit{F. sacchari} & FS66 & 5.24\% & 68.65\% & 22.49\% & 93.96\% \\
+\textit{Stenotrophomonas maltophilia} & NCTC10258 & 49.32\% & 0.01\% & 53.93\% & -- \\ \hline
 \end{tabular}%
 }
 \end{table}
-\end{landscape}

@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Document Type
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\documentclass[12pt, a4paper]{report}  %Remove "twoside" for pdf version, keep for printing. 
+\documentclass[11pt, a4paper]{report}  %Remove "twoside" for pdf version, keep for printing. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Packages
@@ -14,7 +14,13 @@
 \usepackage{amsmath}     %!  setspace is used to control linepacing
 %\usepackage[square]{natbib} %! needed for Harvard style of references.
 \usepackage{enumerate}  %! used for the library form, but you might find 
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=magenta,
+    urlcolor=blue}
 \usepackage[a4paper,width=150mm,top=30mm,bottom=25mm]{geometry} %Remove "left=4cm" for pdf version, keep for printing. 
 \usepackage{multicol}
 \usepackage{amssymb}
@@ -40,11 +46,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Font
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[doublespacing]{setspace}
+\usepackage[onehalfspacing]{setspace}
 \usepackage[T1]{fontenc}
 \usepackage{newpxtext,newpxmath}
 %Set section headers to not be bold
-\usepackage[titles]{tocloft}
+\usepackage[titles]{tocloft, calc}
 \renewcommand{\cftsecfont}{\mdseries}
 \renewcommand{\cftsecpagefont}{\mdseries}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,28 +65,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{listings}
 \usepackage{color}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Settings
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\thesisdraft                       %% Uncomment this if you want a draft
 %Chapter Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\leftchapter
 \usepackage{epigraph} %To add quotes
 \usepackage{titlesec}
-\definecolor{gray75}{gray}{0.75}
-\newcommand{\hsp}{\hspace{10pt}}
-\titleformat{\chapter}{\Huge}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
+\usepackage{ulem}
+
+\makeatletter
+\def\@makechapterhead#1{%
+    \vspace*{2em}% Space above number
+    {\parindent \z@  \normalfont
+    \interlinepenalty\@M
+    \huge\centering{\scshape Chapter\ \thechapter}%
+    \par\vspace{-2.63em}%
+    \par\rule{.33\textwidth}{0.6pt}
+    \par\vspace{0em}% Space between number and title
+    \singlespacing\textbf{#1}%
+    \par\vspace{2em}% Space between title and text
+}}
+\makeatother
+
 \titleformat*{\section}{\Large\bfseries}
 \titleformat*{\subsection}{\large\bfseries}
 \titleformat*{\subsubsection}{\normalfont\bfseries}
 
 %Paragraph Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\doublespacing
+\onehalfspacing
 \usepackage{blindtext}
 \usepackage{lastpage}
 \usepackage{fancyhdr}
+\usepackage{parskip}
+\setlength{\parindent}{3em}
 
 %Header and Footer Style
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -88,13 +105,21 @@
 \definecolor{headergray}{RGB}{128,128,128} % Define the grey color
 \renewcommand{\headrule}{\textcolor{headergray}{\rule{\headwidth}{0pt}}} % Change the color of the header rule
 \pagestyle{fancy}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 \fancyhf{}
-\fancyhead{}
-\fancyhead[R]{\textcolor{headergray}{New Tools for the Identification of Fusarium Wilt in Banana}}
+%\fancyhead[L]{\textcolor{headergray}{\small New Tools Thesis - Draft 1}}
+\fancyhead[R]{\textcolor{headergray}{\small\chaptername~\thechapter | \leftmark}}
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
 %Prevent footnotes from breaking over multiple pages. 
 \interfootnotelinepenalty=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
+%Contents page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\cftchappresnum}{Chapter }
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries Chapter }}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
 %Acronyms
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,8 +158,6 @@
   short = \textit{Foc} R1,
   long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Race 1,
 }
-
-
 \DeclareAcronym{r2}{
   short = R2,
   long  = Race 2,
@@ -151,7 +174,7 @@
 }
 
 \DeclareAcronym{Fon}{
-  short = \textit{Fol},
+  short = \textit{Fon},
   long  = \textit{Fusarium oxysporum} f. sp. \textit{niveum},
 }
 
@@ -261,7 +284,7 @@ long = base pair,
 
 \DeclareAcronym{tir}{
 short = TIR,
-long = terminal invert repeat,
+long = Terminal Invert Repeat,
 }
 
 \DeclareAcronym{prr}{
@@ -345,6 +368,10 @@ short = ANOVA,
 long = Analysis of variance,
 }
 
+\DeclareAcronym{hmm}{
+short = HMM,
+long = Hidden Markov Model}
+
 %Experimental Terms and Techniques
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -365,7 +392,7 @@ long = High-performance liquid chromatography,
 
 \DeclareAcronym{lcms}{
 short = LCMS,
-long = Liquid chromatography-Mass spectrometry,
+long = Liquid Chromatography-Mass Spectrometry,
 }
 
 \DeclareAcronym{lamp}{
@@ -420,17 +447,19 @@ long = remote sensing }
 
 \DeclareAcronym{uav}{
 short = UAV,
-long = Unmanned aerial vehicle}
+long = Unmanned Aerial Vehicle}
 
 \DeclareAcronym{vi}{
 short = VI,
-long = Vegetation indices}
+long = Vegetation Indices}
 
 \DeclareAcronym{ps2}{
 short = PSII,
 long = Photosystem II}
 
 \newcommand{\et}{\textit{et al., }}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
 %Start Document
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -440,40 +469,62 @@ long = Photosystem II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Title Pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \input{Preamble/TitlePage}
+\begin{titlepage}
+\input{Preamble/TitlePage}
+\end{titlepage}
 \newpage
 \thispagestyle{empty} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fromatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \pagenumbering{roman} %! Begins roman numerals start from page i.
-Title Pages
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Table of Contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
-\tableofcontents                     
+\tableofcontents
 \listoftables                     
-\listoffigures                    
+\listoffigures  
+
+\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{0pt}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Prelimary Sections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{thesisacknowledgments}        
-% \input Preamble/0.1_Acknowledgments.tex       
-% \end{thesisacknowledgments}
 
-% \begin{thesisdeclaration}       
-% \input Preamble/0.2_Declarations.tex 
-% \end{thesisdeclaration}
+\setcounter{secnumdepth}{-2}% default for "report" is 2
 
-% \begin{thesisabstract}              
-%   \begin{singlespace}    
-%     \input Preamble/0.3_Abstract.tex      
-%  \end{singlespace}
-% \end{thesisabstract}
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Acknowledgements}
+% \chapter*{\huge\centering Acknowledgements}
 
-% %\begin{thesisabbreviations}      
-\printacronyms[name=Abbreviations]
-%\end{thesisabbreviations}
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Thesis Declaration}
+% \chapter*{\huge\centering Thesis Declaration}
+
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Inclusion of Published Work}
+% \chapter*{\huge\centering Inclusion of Published Work}
+
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Abstract}
+% \chapter*{\huge\centering Abstract}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbreviations}
+\chapter*{\huge\centering Abbreviations}  
+\printacronyms[heading=none]
+
 \clearpage
+
+\setcounter{secnumdepth}{2}
+
+      
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -488,8 +539,8 @@ Title Pages
 \chapter{General Introduction}
     \input{Chapters/1_Introduction.tex}
     
-% \chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified}
-%     \input{Chapters/2_PotentialNovelFusarium.tex}
+\chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified}
+    \input{Chapters/2_PotentialNovelFusarium.tex}
     
 % \chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}
 %     \input{Chapters/3_ImprovingGenomicTools.tex}
@@ -500,9 +551,10 @@ Title Pages
 %  \chapter{Metabolomics: The Banana-pathogen Metabolome}
 %     \input{Chapters/5_Metabolomics.tex}
 
-\chapter{References}
-    \printbibliography 
+% \printbibliography 
 
+% \chapter*{Covid-19 Impact Statement}
+% \addcontentsline{toc}{part}{Covid-19 Impact Statement} %Add this to the table of contents. 
 
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendices
