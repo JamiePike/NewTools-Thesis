@@ -42,7 +42,7 @@
 \usepackage{booktabs}
 \usepackage{threeparttable}
 \usepackage{multirow} 
-\usepackage{caption} % Add this line for caption customization
+% Add this line for caption customization
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Font
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -57,6 +57,7 @@
 %Set Figure and Table Caption colour
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{caption}
+\usepackage{subcaption} 
 \captionsetup[table]{labelsep=period, labelfont={bf}, font={small, stretch=1.5}}     %% change 1.2 as you like
 \captionsetup[figure]{labelsep=period, labelfont={bf}, font={small, stretch=1.5}}
 \captionsetup{width=0.98\textwidth}
@@ -536,19 +537,19 @@ long = Photosystem II}
 % \setlength\epigraphwidth{.7\textwidth}
 % \setlength{\epigraphrule}{0pt}
     
-\chapter{General Introduction}
+\chapter{General Introduction}\label{Chap1}
     \input{Chapters/1_Introduction.tex}
     
-\chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified}
+\chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified}\label{Chap2}
     \input{Chapters/2_PotentialNovelFusarium.tex}
     
-% \chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}
+\chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
 %     \input{Chapters/3_ImprovingGenomicTools.tex}
     
-% \chapter{Phenomics: Image-based Analysis of Banana Stresses}
+ \chapter{Phenomics: Image-based Analysis of Banana Stresses}\label{Chap4}
 %     \input{Chapters/4_Phenomics.tex}
     
-%  \chapter{Metabolomics: The Banana-pathogen Metabolome}
+  \chapter{Metabolomics: The Banana-pathogen Metabolome}\label{Chap5}
 %     \input{Chapters/5_Metabolomics.tex}
 
 % \printbibliography 
