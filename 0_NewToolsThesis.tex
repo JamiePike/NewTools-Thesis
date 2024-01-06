@@ -165,10 +165,20 @@
 }  
   
 \DeclareAcronym{Fo}{
-  short = \textit{F. oxysporum},
+  short = \textit{Fo},
   long  = \textit{Fusarium oxysporum},
 }
-  
+
+\DeclareAcronym{Fs}{
+  short = \textit{Fs},
+  long  = \textit{Fusarium sacchari},
+}
+
+\DeclareAcronym{Ff}{
+  short = \textit{Ff},
+  long  = \textit{Fusarium fujikuroi},
+}
+
 \DeclareAcronym{Fol}{
   short = \textit{Fol},
   long  = \textit{Fusarium oxysporum} f. sp. \textit{lycopersici},
@@ -222,7 +232,7 @@
 }
 
 \DeclareAcronym{rbp2}{
-  short = \textit{RBPII},
+  short = \textit{RPBii},
   long  = \textit{RNA polymerase   subunit 2},
 }
 
@@ -540,10 +550,10 @@ long = Photosystem II}
 \chapter{General Introduction}\label{Chap1}
     \input{Chapters/1_Introduction.tex}
     
-\chapter{Potential Novel \textit{Fusarium} Pathogen of Banana Identified}\label{Chap2}
+\chapter{Genomics: Potential Novel \textit{Fusarium} Pathogen of Banana Identified}\label{Chap2}
     \input{Chapters/2_PotentialNovelFusarium.tex}
     
-\chapter{Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
+\chapter{Effectoromics: Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
 %     \input{Chapters/3_ImprovingGenomicTools.tex}
     
  \chapter{Phenomics: Image-based Analysis of Banana Stresses}\label{Chap4}
@@ -560,14 +570,16 @@ long = Photosystem II}
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Appendices
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \appendix                            %% this will do the appendices
-% \chapter{Scripts used for \textit{Fusarium} Genome Assembly and Analysis}
-% For all of the scripts written as part of the genome assembly and analysis of the TNAU \textit{Fusarium} isolates, SY-2, S6, S16, and S32. 
-% \input{Appendices/Chap2-CodeSections}
 
-% \chapter{Scripts used as part of Maei Pipeline and Subsequent Analysis}
-% For all of the scripts written for the \textit{mimp}-associated effector identification pipeline, as well as scripts used for the additional analysis of the \textit{Fusarium} database used in the identification of effector candidates. 
-% \input{Appendices/Chap3-CodeSections}
+\setcounter{secnumdepth}{-2}%
+
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Supplementary Materials}
+\chapter*{\huge\centering Supplementary Materials}  
+\section{Appendix A}
+%\input{Appendices/Chap2-Appendix}
 
 \end{document}                       %% Done.
 
