@@ -14,7 +14,7 @@
 \usepackage{amsmath}     %!  setspace is used to control linepacing
 %\usepackage[square]{natbib} %! needed for Harvard style of references.
 \usepackage{enumerate}  %! used for the library form, but you might find 
-\usepackage{hyperref}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -33,6 +33,10 @@
 \usepackage[backend=bibtex, style=authoryear]{biblatex}
 \addbibresource{NewTools.bib} %Import the bibliography file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Footnotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{scrextend}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Tables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{lscape}
@@ -40,7 +44,7 @@
 \usepackage{array}
 \usepackage{bigfoot}
 \usepackage{booktabs}
-\usepackage{threeparttable}
+\usepackage{threeparttablex}
 \usepackage{multirow} 
 % Add this line for caption customization
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,47 +131,60 @@
                             
 %Organism Names
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\DeclareAcronym{Focub}{
-  short = \textit{Foc},
-  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense}}
 
-\DeclareAcronym{tr4}{
-  short = TR4,
-  long  = Tropical Race 4,
-}
-
-\DeclareAcronym{Focub4}{
-  short = \textit{Foc} TR4,
-  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Tropical Race 4}
-
-
-\DeclareAcronym{str4}{
-  short = STR4,
-  long  = Sub-Tropical Race 4,
-}
-
-\DeclareAcronym{r1}{
-  short = R1,
-  long  = Race 1,
-}
-\DeclareAcronym{r4}{
-  short = R4,
-  long  = Race 4,
-}
-
-\DeclareAcronym{Focub1}{
-  short = \textit{Foc} R1,
-  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Race 1,
-}
-\DeclareAcronym{r2}{
-  short = R2,
-  long  = Race 2,
-}  
-  
 \DeclareAcronym{Fo}{
   short = \textit{Fo},
   long  = \textit{Fusarium oxysporum},
 }
+
+\DeclareAcronym{Focub}{
+  short = \textit{Focub},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense}}
+
+\DeclareAcronym{Focub4}{
+  short = \textit{Focub} TR4,
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Tropical Race 4}
+
+\DeclareAcronym{Focub1}{
+  short = \textit{Focub} R1,
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Race 1,
+}
+
+\DeclareAcronym{Fol}{
+  short = \textit{Foly},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{lycopersici},
+}
+
+\DeclareAcronym{Fon}{
+  short = \textit{Foni},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{niveum},
+}
+
+\DeclareAcronym{Fona}{
+  short = \textit{Fona},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{narcissi},
+}
+
+\DeclareAcronym{Fola}{
+  short = \textit{Fola},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{lactucae},
+}
+
+\DeclareAcronym{Foci}{
+  short = \textit{Foci},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{coriandrii},
+}
+
+\DeclareAcronym{Foma}{
+  short = \textit{Foma},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{matthiolae},
+}
+
+\DeclareAcronym{Foa}{
+  short = \textit{Foap},
+  long  = \textit{Fusarium oxysporum} f. sp. \textit{apii},
+}
+
 
 \DeclareAcronym{Fs}{
   short = \textit{Fs},
@@ -179,14 +196,39 @@
   long  = \textit{Fusarium fujikuroi},
 }
 
-\DeclareAcronym{Fol}{
-  short = \textit{Fol},
-  long  = \textit{Fusarium oxysporum} f. sp. \textit{lycopersici},
+\DeclareAcronym{Fg}{
+  short = \textit{Fg},
+  long  = \textit{Fusarium graminearum},
 }
 
-\DeclareAcronym{Fon}{
-  short = \textit{Fon},
-  long  = \textit{Fusarium oxysporum} f. sp. \textit{niveum},
+\DeclareAcronym{r1}{
+  short = R1,
+  long  = Race 1,
+}
+
+\DeclareAcronym{r2}{
+  short = R2,
+  long  = Race 2,
+}  
+
+\DeclareAcronym{r3}{
+  short = R3,
+  long  = Race 3,
+}  
+
+\DeclareAcronym{r4}{
+  short = R4,
+  long  = Race 4,
+}
+
+\DeclareAcronym{tr4}{
+  short = TR4,
+  long  = Tropical Race 4,
+}
+
+\DeclareAcronym{str4}{
+  short = STR4,
+  long  = Sub-Tropical Race 4,
 }
 
 
@@ -344,12 +386,31 @@ short = R gene,
 long = resistance gene,
 }
 
-                         
+\DeclareAcronym{nafld}{
+short = NAFLD,
+long = Non-Alcoholic Fatty Liver Disease,
+}
+
+\DeclareAcronym{nafl}{
+short = NAFL,
+long = Non-Alcoholic Fatty Liver,
+}
+
+\DeclareAcronym{nash}{
+short = NASH,
+long = Non-Alcoholic Steato-Hepatitis,
+}
+                   
 %Bioinf 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareAcronym{blast}{
 short = BLAST,
 long = Basic Local Alignment Tool,
+}
+
+\DeclareAcronym{orf}{
+short = ORF,
+long = Open Reading Frame,
 }
 
 \DeclareAcronym{busco}{
@@ -449,6 +510,11 @@ long = National Center of Biotechnology Information, }
 short = TNAU,
 long = Tamil Nadu Agricultural University }
 
+\DeclareAcronym{niab}{
+short = NIAB,
+long = National Institute of Agricultural Botany}
+
+
 %Misc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -480,11 +546,11 @@ long = Photosystem II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Title Pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{titlepage}
-\input{Preamble/TitlePage}
-\end{titlepage}
-\newpage
-\thispagestyle{empty} 
+% \begin{titlepage}
+% \input{Preamble/TitlePage}
+% \end{titlepage}
+% \newpage
+% \thispagestyle{empty} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fromatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -553,15 +619,16 @@ long = Photosystem II}
 \chapter{Genomics: Potential Novel \textit{Fusarium} Pathogen of Banana Identified}\label{Chap2}
     \input{Chapters/2_PotentialNovelFusarium.tex}
     
-%\chapter{Effectoromics: Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
-%     \input{Chapters/3_ImprovingGenomicTools.tex}
+\chapter{Effectoromics: Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
+     \input{Chapters/3_ImprovingGenomicTools.tex}
     
- %\chapter{Phenomics: Image-based Analysis of Banana Stresses}\label{Chap4}
+ \chapter{Phenomics: Image-based Analysis of Banana Stresses}\label{Chap4}
 %     \input{Chapters/4_Phenomics.tex}
     
-%\chapter{Metabolomics: The Banana-pathogen Metabolome}\label{Chap5}
-%     \input{Chapters/5_Metabolomics.tex}
+\chapter{Metabolomics: The Banana-pathogen Metabolome}\label{Chap5}
+     %\input{Chapters/5_Metabolomics.tex}
 
+\chapter{General Discussion}\label{Chap6}
 
 % \chapter*{Covid-19 Impact Statement}
 % \addcontentsline{toc}{part}{Covid-19 Impact Statement} %Add this to the table of contents. 
