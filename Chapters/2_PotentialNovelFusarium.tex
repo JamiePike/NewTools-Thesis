@@ -77,14 +77,14 @@ The common \textit{Fusarium} genetic barcodes \ac{tef} and \ac{rbp2} were used t
 \subsection{Identification of pathogen-specific features.}
 
 \subsubsection{\textit{Secreted In Xylem} gene identification and phylogenetic analysis}
-
+\label{chap1:tnauSIXgenePhylo}
 To identify known \acs{Fo} effectors in the \ac{tnau} assemblies and compare the \ac{sixg} profile to other \textit{Fusaria}, reference sequences for SIX1-SIX14 used by \textcite{Czislowski2018} were downloaded from  GenBank and homologues of each \textit{SIX} gene was identified using TBLASTN (v2.9.0+) (1e\textsuperscript{6} cut-off) in the \ac{tnau} assemblies, as well as publicly available assemblies of \ac{Focub} (n=14), \ac{Fs} (n=2), the \ac{Fo} endophyte Fo47, \ac{Fo} formae speciales \textit{cepae, conglutinans, coriandrii, lini, lycopersici,  rapae} and \textit{vasinfectum}, and \textit{F. graminearum}, which were downloaded from \href{https://www.ncbi.nlm.nih.gov/data-hub/genome/}{GenBank} following a genome search. (Supplementary table x: Genomes table). A binary data matrix indicating presence (“1”) or absence (“0”) was generated using the TBLASTN hit data for visualisation. 
 
 Homologues of each \ac{sixg} identified were extracted for phylogenetic analysis.  The locations of hits were recorded, and the sequence within this region was manually examined and extracted using SAMtools (v1.15.1). Sequences from each genome were concatenated into a single FASTA file for each \ac{sixg} and aligned with  MAFFT (v7.505) \parencite{Katoh2019}, adjusting the direction according to the first sequence to ensure correct alignment. Overhanging regions were trimmed manually. IQ-TREE2 (v2.2.0.3) \parencite{Nguyen2015} was used to infer a maximum-likelihood phylogeny using the ultrafast bootstrap setting for 1000 bootstrap replicates and phylogenies were visualised using iTOL \parencite{Letunic2021}.
 
 \subsubsection{Identification of putative effectors}
 
-To identify candidate effectors in the \ac{tnau} isolates, the predicted protein set for each isolate was filtered by size (>30aa and <450aa) and submitted to SignalP (v4.1) \parencite{Petersen2011}. Sequences that were predicted to contain a signal peptide were passed to EffectorP (v2.0.1) \parencite{Sperschneider2018} for effector prediction. The candidate effector sets from each genome were then combined and clustered using CD-HIT (v4.8.1) at 80\% to identify shared candidate effectors. 
+To identify candidate effectors in the \ac{tnau} isolates, the predicted protein set for each isolate was filtered by size (>30aa and <450aa) and submitted to SignalP (v4.1) \parencite{Petersen2011}. Sequences that were predicted to contain a signal peptide were passed to EffectorP (v2.0.1) \parencite{Sperschneider2018} for effector prediction. The candidate effector sets from each genome were then combined and clustered using CD-HIT (v4.8.1) \parencite{Fu2012} at 80\% to identify shared candidate effectors. 
 
 %\subsubsection{Reference genome alignment and raw read mapping}
 
@@ -242,7 +242,7 @@ As homologues of \textit{SIX1, SIX2, SIX4, SIX6}, and \textit{SIX9} were identif
 
 \begin{figure}[htp!]
   \centering
-  \includegraphics[width=15cm]{Figures/Heatmap.pdf}
+  \includegraphics[width=15cm]{Figures/SIX_Heatmap.pdf}
   \caption[Binary distribution of \textit{SIX} genes across Fusarium TNUA genome assemblies]{\textbf{Binary distribution of \textit{SIX} genes across Fusarium TNUA genome assemblies}. \aclp{sixg} identified using TBLASTN (cut off 1\-e\textsuperscript{6}) using SIX genes from F. oxysporum fsp. lycopersici as a reference. \textit{SIX4} not found in the \acl{Fol} 4287 assembly, supported by previous publications \parencite{Czislowski2018}}
   \label{fig:SixTNAU}
 \end{figure}
