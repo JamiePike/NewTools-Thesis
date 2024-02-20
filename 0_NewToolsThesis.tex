@@ -27,6 +27,7 @@
 \usepackage{acro}
 \usepackage{textgreek}
 \usepackage{afterpage}
+\usepackage{rotating}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -150,7 +151,7 @@
   long  = \textit{Fusarium oxysporum} f. sp. \textit{cubense} Race 1,
 }
 
-\DeclareAcronym{Fol}{
+\DeclareAcronym{Foly}{
   short = \textit{Foly},
   long  = \textit{Fusarium oxysporum} f. sp. \textit{lycopersici},
 }
@@ -233,8 +234,10 @@
 
 
 \DeclareAcronym{fsp}{
-  short = f. spp.,
-  long  = \textit{Formae speciales},
+  short = f. sp.,
+  short-plural-form = f. spp.,
+  long = \textit{forma specialis},
+  long-plural-form  = \textit{formae speciales},
 }
 
 \DeclareAcronym{FFSC}{
@@ -318,6 +321,20 @@
 \DeclareAcronym{AVR}{
 short = AVR,
 long = avirulence,
+}
+
+\DeclareAcronym{cec}{
+short = CEC,
+long = candidate effector cluster}
+
+\DeclareAcronym{ce}{
+short = CE,
+long = candidate effector,
+}
+
+\DeclareAcronym{mimpce}{
+short = MACE,
+long = \textit{mimp}-associated candidate effector,
 }
 
 \DeclareAcronym{ac}{
@@ -419,7 +436,7 @@ long = Benchmarking Universal Single-Copy Orthologs,
 }
 
 \DeclareAcronym{maei}{
-short = Maei,
+short = MAEI,
 long = \textit{Mimp}-Associated Effector Identification,
 }
 
@@ -430,7 +447,7 @@ long = Spliced Transcripts Alignment to a Reference,
 
 \DeclareAcronym{ml}{
 short = ML,
-long = Machine learning,
+long = machine learning,
 }
 
 \DeclareAcronym{phibase}{
@@ -528,7 +545,7 @@ long = National Center of Biotechnology Information}
 
 \DeclareAcronym{ngdc}{
 short = NGDC,
-long = National Genomics Data Centre, China}
+long = National Genomics Data Centre}
 
 \DeclareAcronym{tnau}{
 short = TNAU,
@@ -638,10 +655,10 @@ long = Photosystem II}
 % \setlength{\epigraphrule}{0pt}
     
 \chapter{General Introduction}\label{Chap1}
-    \input{Chapters/1_Introduction.tex}
+    %\input{Chapters/1_Introduction.tex}
     
 \chapter{Genomics: Potential Novel \textit{Fusarium} Pathogen of Banana Identified}\label{Chap2}
-    \input{Chapters/2_PotentialNovelFusarium.tex}
+    %\input{Chapters/2_PotentialNovelFusarium.tex}
     
 \chapter{Effectoromics: Improving Genomic Tools for Identifying Virulence Factors in   \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
      \input{Chapters/3_ImprovingGenomicTools.tex}
@@ -671,7 +688,7 @@ long = Photosystem II}
 \addcontentsline{toc}{chapter}{Supplementary Materials}
 \chapter*{\huge\centering Supplementary Materials}  
 \section{Appendix A}
-\input{Appendices/Chap2-Appendix}
+%\input{Appendices/Chap2-Appendix}
 \section{Appendix B}
 \input{Appendices/Chap3-Appendix}
 
