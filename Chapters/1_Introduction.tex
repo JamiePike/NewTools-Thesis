@@ -167,13 +167,7 @@ Satellites, such as Landsat and Sentinel, which make data freely accessible, com
 
 In healthy plants, due to the absorption of blue, yellow, and red bands by photoactive pigments (e.g. anthocyanins, carotenoids, chlorophylls), leaves typically exhibit low reflectance as VIS wavelengths. Similarly, water and leaf chemical components (e.g. proteins, lignin, cellulose) absorb SWIR resulting in low reflectance at the SWIR range \parencite{West2010}. Conversely, healthy plants exhibit high reflectance at the NIR range, as cell arrangement in leaf mesophyll tissue causes multiple scattering of NIR spectral bands \parencite{Ollinger2011}. In diseased plants, divergence from these optical properties can be observed. As a consequence of photochemical pigment degradation/destruction, necrotic or chlorotic lesions on appear on leaves, which, alongside pathogen propagules, cause increased reflectance in the VIS range. Similarly, increased reflectance in the SWIR range can be observed where pathogenesis affects water content, senescence and reduced growth, while defoliation drives decreased reflectance in the NIR range.   
 
-\subsubsection{Remote Sensing for Image-based Identification of Disease in Banana}
-
-Various studies have been published employing \ac{rs} for disease diagnosis in banana. \textcite{Johansen2014} developed an automatic banana identification software to aid in Banana Bunch Top Virus inspection and \textcite{Liao2018} employed hyperspectral images and machine learning to diagnose Banana Streak Virus at earlier stages of infection. \textcite{Ochoa2016} designed a hyperspectral imaging system for disease scanning on banana plants focusing on Black Sigatoka. \acp{uav}, RGB imaging, and Artificial Neural Networks have also been employed in the monitoring of Yellow Sigatoka \parencite{Calou2020}.  
-
-Recently, \ac{rs} disease diagnosis efforts in banana have focused on the identification of \ac{Focub} infection \parencite{Ye2020a, Ye2020b, Selvaraj2019}.  Ye et al (2020a,b) demonstrated that \ac{uav}-based multispectral imagery can be used to diagnose \ac{fwb}. The authors observed statistically significant differences (p > 0.05) between healthy and diseased plants using six different \acp{vi}. Using logistic regression models to describe the relationship between the \acp{vi} in healthy or diseased plants, the authors reported that the red-edge chlorophyll index had the best performance for identifying \ac{fwb}.  
-
-It is clear that spectral reflectance can be used to diagnose \ac{fwb} in banana. What is not clear, however, is what is happening from a biological perspective to cause the differences in spectra observed, and whether the changes in spectra can be distinguished from other biotic and abiotic stresses. For instance, as \ac{Focub} is a vascular pathogen, it is important to ensure that \ac{Focub} infection can be differentiated from drought stress and other vasucular wilt pathogens like \acf{xvm}. 
+Many \ac{rs} studies have been conducted for the diagnosis of disease in banana, including those by \textcite{Johansen2014, Liao2018, Ochoa2016, Calou2020}. With additional studies by \textcite{Ye2020a, Ye2020b, Selvaraj2019, Zhang2022} focusing specifically on \ac{Focub}. All studies mentioned managed to successfully diagnose \ac{fwb}, distinguishing healthy plants from those infected with \ac{Focub}. Spectral reflectance proves effective in diagnosing \ac{fwb}, yet understanding the underlying biological mechanisms behind the observed spectral differences and distinguishing them from other stresses such as drought and vascular wilt pathogens like \ac{xvm} remains a challenge.
 
 \textcite{Marin2020} assessed the efficacy of \ac{rs} to distinguish water-stressed tomato plants from those infected with \ac{Fo} Fo5 strain isolated from \textit{Passiflora edulis} (passionfruit). The study showed that diseased plants could be distinguished from those subjected to hydric stress at 448–523nm, 624–696nm, 740–960nm, 973–976nm, and 992–995nm. However, these results were derived from multivariant analysis, whereby reflectance was correlated with the net assimilation rate of CO\textsubscript{2}, intercellular CO\textsubscript{2} concentration, stomatal conductance, transpiration rate, quantitative yield of \ac{ps2}, and continuous fluorescence. There is little indication that a single method of physiological stress measurement and its relationship to reflectance could be used to distinguish water stress from disease symptoms. One has to question how viable such multivariant analysis is as a means of diagnosis in the field. Is it practical or cost-efficient to measure these photosynthetic parameters in-field and correlate this with spectral reflectance to determine if plants are infected, or would alternative diagnostics be more effective and efficient?   
 
@@ -202,9 +196,8 @@ The overall aim of this research is to develop multi-omic tools for the detectio
 
 \begin{enumerate}
     \item Build tools which aid in the identification of targets for molecular diagnostics and contribute to our understanding of \ac{Focub}-banana interactions as well as the evolutionary history and classification of \ac{Focub}. 
-    \item Develop molecular diagnostics which can be used to identify specific races of \acl{Fo}. \footnote{Due to challenges sourcing isolates and sequence information from collaborators in Tamil Nadu Agricultural University, India (TNAU), our effector identification tool cannot currently be validated using \ac{Focub}. However, we are testing this tool using other \acl{Fo} \fancypagestyle{}{}{fsp} with collaborators at NIAB and the University of Warwick.}
-    \item Employ phenomics to investigate banana responses to \ac{Focub} infection and contribute to the development of image-based diagnostic techniques.  
-    \item Develop novel -omics approaches to improve understanding of banana interactions with \ac{Focub}.  
+    \item Develop molecular diagnostics which can be used to identify specific races of \acl{Fo}. \footnote{Due to challenges sourcing isolates and sequence information from collaborators in Tamil Nadu Agricultural University, India (TNAU), our effector identification tool cannot currently be validated using \ac{Focub}. However, we are testing this tool using other \acl{Fo} \fancypagestyle{}{}{fsp} with collaborators at NIAB and the University of Warwick.} 
+    \item Develop novel -omics approaches to improve understanding of banana interactions with \ac{Focub} and aid in the development of diagnostics.
 \end{enumerate}
 
 \newpage
@@ -216,16 +209,12 @@ This chapter reviews the  genome assembly and subsequent analysis performed on \
 
 \subsection{Chapter 3: Effectoromics: Improving Genomic Tools for Identifying Virulence Factors in \textit{Fusarium oxysporum}} 
 
-This chapter charts the development of the \textit{mimp}-Associated Effector Identification (Maei) tool which identifies putative effectors in \acl{Fo}, and the implications effector profiles have on the classification and genome compartmentalisation of the FOSC. It includes new genome sequences from collaborators at the University of Warwick and NIAB. Effector presence, location, predicted structures, homology, expression, and potential function are explored. 
-These candidate effectors are used in the development of molecular diagnostics, and the potential of the Maei tool in the development of \acl{Fo} \ac{fsp} race-specific diagnostics is explored. 
+This chapter describes our \acf{maei} tool which identifies putative effectors in \acl{Fo}, and the implications effector profiles have on the classification and genome compartmentalisation of the FOSC. It includes new genome sequences from collaborators at the University of Warwick and \ac{niab}. \Acl{ce} presence/absence patterns, homology, and expression are explored. \Acp{ce} identified using the \ac{maei} tool can be used in the development potentially race-specific of molecular diagnostics for \acl{Fo}.\footnote{This work is ongoing with collaborators at the University of Warwick, \ac{niab}, and Tozer seeds.} 
 
-\subsection{Chapter 4: Phenomics: Image-based Analysis of Banana Stresses}
+\subsection{Chapter 4: Metabolomics: The Banana-pathogen Metabolome}
 
-Banana disease imaging was conducted. This chapter discusses and explores the technologies currently available for image-based disease detection in banana, how spectral data can distinguish stresses, and why different spectral patterns are observed. 
-It also explores X-ray computerised tomography data, recording the internal development of symptoms and how this relates to multispectral data.
-
-\subsection{Chapter 5: Metabolomics: The Banana-pathogen Metabolome}
-Untargeted Metabolomics analysis was performed on infected banana to help develop our understanding of the \acl{Focub} infection process and indicate how this may be related to patterns observed in image-based analysis. We also identify specific markers of infection from a variety of biotic and abiotic stresses. 
+Banana disease imaging and \acl{um} analysis were conducted. This chapter
+aims to help develop our understanding of the \acl{Focub} infection process and indicate how this may be related to patterns observed in image-based analysis. We also identify specific markers of infection from a variety of biotic and abiotic stresses. 
 
 \subsection{Chapter 6: General Discussion}
 This chapter discusses the main results from the thesis and draws overall conclusions. It also considers areas for improvement and future work. 
