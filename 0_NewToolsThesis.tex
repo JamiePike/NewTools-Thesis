@@ -18,13 +18,12 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
-    citecolor=blue,
+    citecolor=black,
     filecolor=magenta,
     urlcolor=blue}
 \usepackage[a4paper,width=150mm,top=30mm,bottom=25mm]{geometry} %Remove "left=4cm" for pdf version, keep for printing. 
 \usepackage{multicol}
 \usepackage{amssymb}
-\usepackage{acro}
 \usepackage{textgreek}
 \usepackage{afterpage}
 \usepackage{rotating}
@@ -48,6 +47,14 @@
 \usepackage{threeparttablex}
 \usepackage{multirow} 
 % Add this line for caption customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Acronyms
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{acro}[=v2]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Chemistry
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{chemformula}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Set Font
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -116,7 +123,7 @@
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 \fancyhf{}
 %\fancyhead[L]{\textcolor{headergray}{\small New Tools Thesis - Draft 1}}
-\fancyhead[R]{\textcolor{headergray}{\small\chaptername~\thechapter | \leftmark}}
+\fancyhead[R]{\textcolor{headergray}{\small\chaptername~\thechapter  | \leftmark}}
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
 %Prevent footnotes from breaking over multiple pages. 
@@ -134,7 +141,6 @@
                             
 %Organism Names
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \DeclareAcronym{Fo}{
   short = \textit{Fo},
   long  = \textit{Fusarium oxysporum},
@@ -471,7 +477,15 @@ long = Partial Least Squares-Discriminant Analysis,
 
 \DeclareAcronym{hmm}{
 short = HMM,
-long = Hidden Markov Model}
+long = Hidden Markov Model
+}
+
+\DeclareAcronym{fc}{
+short = FC,
+long = fold change
+}
+
+
 
 %Experimental Terms and Techniques
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -504,6 +518,11 @@ long = high-performance liquid chromatography,
 \DeclareAcronym{lcms}{
 short = LC-MS,
 long = Liquid Chromatography-Mass Spectrometry,
+}
+
+\DeclareAcronym{esi}{
+short = ESI,
+long = electrospray ionisation,
 }
 
 \DeclareAcronym{lamp}{
@@ -592,7 +611,7 @@ long = Vegetation Indices}
 short = PSII,
 long = Photosystem II}
 
-\newcommand{\et}{\textit{et al., }}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                             
@@ -627,7 +646,7 @@ long = Photosystem II}
 %Prelimary Sections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\setcounter{secnumdepth}{-2}% default for "report" is 2
+% \setcounter{secnumdepth}{-2}% default for "report" is 2
 
 % \cleardoublepage
 % \phantomsection
@@ -649,11 +668,11 @@ long = Photosystem II}
 % \addcontentsline{toc}{chapter}{Abstract}
 % \chapter*{\huge\centering Abstract}
 
-\cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Abbreviations}
-\chapter*{\huge\centering Abbreviations}  
-\printacronyms[heading=none]
+% \cleardoublepage
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Abbreviations}
+% \chapter*{\huge\centering Abbreviations}  
+% \printacronyms[heading=none]
 
 \clearpage
 
@@ -672,15 +691,15 @@ long = Photosystem II}
 % \setlength{\epigraphrule}{0pt}
     
 \chapter{General Introduction}\label{Chap1}
-    \input{Chapters/1_Introduction.tex}
+    %\input{Chapters/1_Introduction.tex}
     
-\chapter{Genomics: Potential Newly Described \textit{Fusarium} Pathogen of Banana Identified in India}\label{Chap2}
+\chapter{Potential Newly Described \textit{Fusarium} Pathogen of Banana Identified in India}\label{Chap2}
     %\input{Chapters/2_PotentialNovelFusarium.tex}
     
-\chapter{Effectoromics: Improving Genomic Tools for Identifying Virulence Factors in  \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
+\chapter{Improving Genomic Tools for Identifying Virulence Factors in  \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
      %\input{Chapters/3_ImprovingGenomicTools.tex}
     
-\chapter{Metabolomics: The Banana-pathogen Metabolome}\label{Chap4}
+\chapter{The Banana-pathogen Metabolome}\label{Chap4}
      \input{Chapters/4_Metabolomics.tex}
 
 \chapter{General Discussion}\label{Chap5}
@@ -700,13 +719,11 @@ long = Photosystem II}
 \phantomsection
 \addcontentsline{toc}{chapter}{Supplementary Materials}
 \chapter*{\huge\centering Supplementary Materials}  
-\section{Appendix A}
-%\input{Appendices/Chap2-Appendix}
-\newpage
-\section{Appendix B}
-%\input{Appendices/Chap3-Appendix}
-\newpage
-\section{Appendix C}
+
+% \input{Appendices/Chap2-Appendix}
+
+% \input{Appendices/Chap3-Appendix}
+
 \input{Appendices/Chap4-Appendix}
 \end{document}                       
 %% Done.
