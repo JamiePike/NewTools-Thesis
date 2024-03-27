@@ -1,6 +1,5 @@
-\newpage
+\clearpage
 \section{Appendix C}
-\subsection{Media Recipies}
 \label{apx:mediaRecipies}
 
 \begin{itemize}
@@ -11,7 +10,6 @@
 \end{itemize}
 
 \newpage
-\subsection{Identification of outliers in the dataset}
 \label{apx:outliers}
 
 \begin{figure}[hp!]
@@ -24,15 +22,30 @@
 \begin{figure}[htp!]
     \centering
     \includegraphics[width=\textwidth]{Figures/AllFeaturesAllSamples_Clustered.png}
-    \caption[Heatmap showing hierarchical clustering of samples based on feature peak intensities.]{\textbf{Heatmap showing hierarchical clustering of samples based on 3931 feature peak intensities.} The distance measure was Euclidean and the ward.D algorithm was used for clustering. Class shows the treatment time and group. Value shows the normalised peak intensity. Values show normalised peak intensity. Features were normalised to the sodium formate Na(NaCOOH)3 adduct ($m/z=226.9521$), log-transformed and scaled (Pareto scaling). Figure generated using MetaboAnalyst (v6.0).}
+    \caption[Heatmap showing hierarchical clustering of samples based on feature peak intensities.]{\textbf{Heatmap showing hierarchical clustering of samples based on 3931 feature peak intensities.} The distance measure was Euclidean and the ward.D algorithm was used for clustering. Class shows the treatment time and group. Value shows the normalised peak intensity. Values show normalised peak intensity. Features were normalised to the sodium formate \ch{Na(NaCOOH)3} adduct ($m/z=226.9521$), log-transformed and scaled (Pareto scaling). Figure generated using MetaboAnalyst (v6.0).}
     \label{fig:AllFeaturesAllSamples}
 \end{figure}
 
+\newpage
 \begin{figure}[htp!]
     \centering
-    \includegraphics[width=\textwidth]{Figures/snorm_0_dpi72.png}
-    \caption[Distribution of peak intensity across samples.]{\textbf{Distribution of peak intensity across samples.} Box plots and kernel density plots before and after normalisation. The boxplots show at most 50 features. The density plots are based on all samples. Features were normalised to the sodium formate Na(NaCOOH)3 adduct ($m/z=226.9521$), log-transformed and scaled (Pareto scaling). Figure generated using MetaboAnalyst (v6.0).}
-    \label{fig:AllSamplesNormDis}
+    \includegraphics[width=\textwidth]{Appendices/Sig453FeaturesRedSamplesRedGroups.pdf}
+    \caption[Heatmap showing hierarchical clustering of samples based on 453 normalised significant feature peak intensities (p ≤ 0.05) (negative mode)]{\textbf{Heatmap showing hierarchical clustering of samples based on 453 normalised significant feature peak intensities (p ≤ 0.05) (negative mode).} The distance measure was Euclidean and the ward.D algorithm was used for clustering. Class shows the treatment time and group. Value shows the normalised peak intensity. Values show normalised peak intensity. Features were normalised to the sodium formate \ch{Na(NaCOOH)3} adduct, log-transformed and scaled (Pareto scaling). Figure generated using MetaboAnalyst (v6.0).}
+    \label{fig:Sig543FeaturesNegMode}
 \end{figure}
 
 \newpage
+\begin{figure}[htp!]
+    \centering
+    \includegraphics[width=\textwidth]{Appendices/Sig56FeaturesRedSamplesFirstTimePointOnly-ExcludingQCs.png}
+    \caption[Heatmap showing hierarchical clustering of samples based on 56 normalised significant feature peak intensities (p ≤ 0.05) from the first time point (negative mode)]{\textbf{Heatmap showing hierarchical clustering of samples based on 56 normalised significant feature peak intensities (p ≤ 0.05) from the first time point (negative mode).} The distance measure was Euclidean and the ward.D algorithm was used for clustering. Class shows the treatment group. Value shows the normalised peak intensity. Values show normalised peak intensity. Features were normalised to the sodium formate \ch{Na(NaCOOH)3} adduct, log-transformed and scaled (Pareto scaling). Figure generated using MetaboAnalyst (v6.0).}
+    \label{fig:Sig56FeaturesNegMode}
+\end{figure}
+
+\newpage
+\begin{figure}[htp!]
+    \centering
+    \includegraphics[width=\textwidth]{Appendices/RedSamplesSecondTimePoint-NonParametric-ExcludingQCs_heatmap_2_dpi72.pdf}
+    \caption[Heatmap showing hierarchical clustering of samples based on 806 normalised significant feature peak intensities (p ≤ 0.05) from the first time point (negative mode)]{\textbf{Heatmap showing hierarchical clustering of samples based on 806 normalised significant feature peak intensities (p ≤ 0.05) (non-parametric ANOVA) from the first time point (negative mode).} The distance measure was Euclidean and the ward.D algorithm was used for clustering. Class shows the treatment group. Value shows the normalised peak intensity. Values show normalised peak intensity. Features were normalised to the sodium formate \ch{Na(NaCOOH)3} adduct, log-transformed and scaled (Pareto scaling). Figure generated using MetaboAnalyst (v6.0).}
+    \label{fig:Sig806FeaturesNegMode}
+\end{figure}

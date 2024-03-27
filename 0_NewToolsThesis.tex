@@ -19,14 +19,24 @@
     colorlinks=true,
     linkcolor=black,
     citecolor=black,
-    filecolor=magenta,
-    urlcolor=blue}
+    filecolor=black,
+    urlcolor=black}
 \usepackage[a4paper,width=150mm,top=30mm,bottom=25mm]{geometry} %Remove "left=4cm" for pdf version, keep for printing. 
 \usepackage{multicol}
 \usepackage{amssymb}
-\usepackage{textgreek}
 \usepackage{afterpage}
 \usepackage{rotating}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Handle special characters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{textgreek}
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+\usepackage{tipa} % for \textgamma
+\DeclareUnicodeCharacter{1E24}{\d{H}}      % uppercase
+\DeclareUnicodeCharacter{1E25}{\d{h}}      % lowercase
+\DeclareUnicodeCharacter{0263}{\textgamma} 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -85,19 +95,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{epigraph} %To add quotes
 \usepackage{titlesec}
-\usepackage{ulem}
+\usepackage[normalem]{ulem}
 
 \makeatletter
 \def\@makechapterhead#1{%
     \vspace*{2em}% Space above number
     {\parindent \z@  \normalfont
     \interlinepenalty\@M
-    \huge\centering{\scshape Chapter\ \thechapter}%
+    \Huge\centering{\bfseries{\scshape Chapter\ \thechapter }}%
     \par\vspace{-2.63em}%
-    \par\rule{.33\textwidth}{0.6pt}
+    \par\rule{.33\textwidth}{0.8pt}
     \par\vspace{0em}% Space between number and title
     \singlespacing\textbf{#1}%
-    \par\vspace{2em}% Space between title and text
+    \par\vspace{1em}% Space between title and text
 }}
 \makeatother
 
@@ -123,7 +133,7 @@
 \renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 \fancyhf{}
 %\fancyhead[L]{\textcolor{headergray}{\small New Tools Thesis - Draft 1}}
-\fancyhead[R]{\textcolor{headergray}{\small\chaptername~\thechapter  | \leftmark}}
+\fancyhead[R]{\ifnum\value{chapter}=0\else\textcolor{headergray}{\small\chaptername~\thechapter  | \fi\leftmark}}
 \fancyfoot{}
 \fancyfoot[C]{\thepage}
 %Prevent footnotes from breaking over multiple pages. 
@@ -141,6 +151,7 @@
                             
 %Organism Names
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \DeclareAcronym{Fo}{
   short = \textit{Fo},
   long  = \textit{Fusarium oxysporum},
@@ -194,10 +205,15 @@
   long  = \textit{Fusarium oxysporum} f. sp. \textit{apii},
 }
 
-
 \DeclareAcronym{Fs}{
   short = \textit{Fs},
   long  = \textit{Fusarium sacchari},
+}
+
+\DeclareAcronym{Fm}{
+  short = \textit{Fm},
+  long  = \textit{Fusarium mindanaoense},
+  mark-as-used=first
 }
 
 \DeclareAcronym{Ff}{
@@ -206,7 +222,7 @@
 }
 
 \DeclareAcronym{Fg}{
-  short = \textit{Fg},
+  short = \textit{F. graminearum},
   long  = \textit{Fusarium graminearum},
 }
 
@@ -240,7 +256,6 @@
   long  = Sub-Tropical Race 4,
 }
 
-
 \DeclareAcronym{fsp}{
   short = f. sp.,
   short-plural-form = f. spp.,
@@ -270,23 +285,28 @@
 
 \DeclareAcronym{xvm}{
   short = \textit{Xvm},
-  long  = \textit{Xanthomonas   campestris }pv. \textit{musacearum},
+  long  = \textit{Xanthomonas vasicola} pv. \textit{musacearum},
 } 
 
 \DeclareAcronym{fwb}{
   short = FWB,
-  long  = \textit{Fusarium} wilt of banana} 
+  long  = Fusarium wilt of banana} 
+
+  \DeclareAcronym{xwb}{
+  short = XWB,
+  long  = Xanthomonas wilt of banana,
+} 
 
 %Genes, Proteins etc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareAcronym{tef}{
-  short = \textit{Tef-1}\textalpha,
-  long  = \textit{Translation Elongation Factor-1} \textalpha ,
+  short = TEF-1\textalpha,
+  long  = translation elongation factor-1\textalpha ,
 }
 
 \DeclareAcronym{rbp2}{
-  short = \textit{RPBii},
-  long  = \textit{RNA polymerase   subunit 2},
+  short = RPB\textit{ii},
+  long  = RNA polymerase subunit 2,
 }
 
 \DeclareAcronym{mites}{
@@ -565,6 +585,11 @@ short = UM,
 long = untargeted metabolomics,
 }
 
+\DeclareAcronym{srm}{
+short = SRM,
+long = selected reaction monitoring,
+}
+
 %Organisations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \DeclareAcronym{FAO}{
@@ -623,15 +648,39 @@ long = Photosystem II}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Title Pages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \begin{titlepage}
-% \input{Preamble/TitlePage}
-% \end{titlepage}
-% \newpage
+\begin{titlepage}
+\input{Preamble/TitlePage}
+\end{titlepage}
+\newpage
+\pagestyle{empty} 
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %Quote
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \thispagestyle{empty} % Remove page number
+
+% \begin{quote}
+% \topskip0pt
+% \vspace*{\fill}
+% \raggedleft % Right-align text
+% \textit{In nature, nothing exists alone.} \\
+% \medskip
+% -- Rachel Carson
+% \end{quote}
+% \vspace*{\fill}
 % \thispagestyle{empty} 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Fromatting
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagenumbering{roman} %! Begins roman numerals start from page i.
+\newpage
+\thispagestyle{empty} 
+
+\pagenumbering{roman} %! Begins roman numerals start from page I.
+
+\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{0pt}}
+
+\setcounter{secnumdepth}{-2}% default for "report" is 2
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Table of Contents
@@ -641,68 +690,64 @@ long = Photosystem II}
 \listoftables                     
 \listoffigures  
 
-\addtocontents{toc}{\protect\setlength{\cftbeforechapskip}{0pt}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Prelimary Sections
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \setcounter{secnumdepth}{-2}% default for "report" is 2
-
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{Acknowledgements}
-% \chapter*{\huge\centering Acknowledgements}
-
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{Thesis Declaration}
-% \chapter*{\huge\centering Thesis Declaration}
-
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{Inclusion of Published Work}
-% \chapter*{\huge\centering Inclusion of Published Work}
-
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{Abstract}
-% \chapter*{\huge\centering Abstract}
-
-% \cleardoublepage
-% \phantomsection
-% \addcontentsline{toc}{chapter}{Abbreviations}
-% \chapter*{\huge\centering Abbreviations}  
-% \printacronyms[heading=none]
+\begin{spacing}{1}
 
 \clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\chapter*{\huge\centering Acknowledgements}
+\input{Preamble/0.1_Acknowledgments}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Thesis Declaration}
+\chapter*{\huge\centering Thesis Declaration}
+\input{Preamble/0.2_Declarations}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\chapter*{\huge\centering Abstract}
+\input{Preamble/0.3_Abstract}
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Abbreviations}
+\chapter*{\huge\centering Abbreviations}  
+\printacronyms[heading=none]
+\clearpage
+
+\end{spacing}
 
 \setcounter{secnumdepth}{2}
 
-      
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Main Chapters
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagenumbering{arabic} %! Begins arabic numerals start from page 1.
 \renewcommand{\arraystretch}{1.5} %Extend tables so they're easier to read
-%Set all instances of text below (e.g. \focub) to italicised full version.
+%Set chapter names and .tex files with chapter content.    
+\pagestyle{fancy} 
 
-% %Set chapter names and .tex files with chapter content.
-% \setlength\epigraphwidth{.7\textwidth}
-% \setlength{\epigraphrule}{0pt}
-    
 \chapter{General Introduction}\label{Chap1}
-    %\input{Chapters/1_Introduction.tex}
+\chaptermark{Introduction}
+\pagenumbering{arabic} %! Begins arabic numerals start from page 1.
+    \input{Chapters/1_Introduction.tex}
     
-\chapter{Potential Newly Described \textit{Fusarium} Pathogen of Banana Identified in India}\label{Chap2}
-    %\input{Chapters/2_PotentialNovelFusarium.tex}
+\chapter{A potential Newly Described \textit{Fusarium} Pathogen of Banana Identified in India}\label{Chap2}
+    \input{Chapters/2_PotentialNovelFusarium.tex}
     
 \chapter{Improving Genomic Tools for Identifying Virulence Factors in  \textit{Fusarium oxysporum formae specialis}}\label{Chap3}
-     %\input{Chapters/3_ImprovingGenomicTools.tex}
+     \input{Chapters/3_ImprovingGenomicTools.tex}
     
 \chapter{The Banana-pathogen Metabolome}\label{Chap4}
      \input{Chapters/4_Metabolomics.tex}
 
-\chapter{General Discussion}\label{Chap5}
+\chapter{The Future of Fusarium Wilt of Banana Research is Multi-omic: A General Discussion}\label{Chap5}
+    \input{Chapters/5_GeneralDiscussion}
 
 % \chapter*{Covid-19 Impact Statement}
 % \addcontentsline{toc}{part}{Covid-19 Impact Statement} %Add this to the table of contents. 
@@ -713,18 +758,23 @@ long = Photosystem II}
 
 \setcounter{secnumdepth}{-2}%
 
-%\printbibliography 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Bibliography}
+\printbibliography
 
 \cleardoublepage
 \phantomsection
 \addcontentsline{toc}{chapter}{Supplementary Materials}
 \chapter*{\huge\centering Supplementary Materials}  
 
-% \input{Appendices/Chap2-Appendix}
+\input{Appendices/Chap2-Appendix}
 
-% \input{Appendices/Chap3-Appendix}
+\input{Appendices/Chap3-Appendix}
 
 \input{Appendices/Chap4-Appendix}
+
+
 \end{document}                       
 %% Done.
 
