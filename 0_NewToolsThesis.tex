@@ -43,6 +43,10 @@
 \usepackage[backend=bibtex, style=authoryear]{biblatex}
 \addbibresource{NewTools.bib} %Import the bibliography file
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Appendix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[toc,page]{appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Footnotes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{scrextend}
@@ -326,7 +330,7 @@
 
 \DeclareAcronym{sixg}{
   short = \textit{SIX} gene,
-  long  = \textit{Secreted In Xylem  } gene,
+  long  = \textit{Secreted In Xylem} gene,
 }
 
 \DeclareAcronym{sixp}{
@@ -764,9 +768,11 @@ long = Photosystem II}
 \printbibliography
 
 \cleardoublepage
-\phantomsection
-\addcontentsline{toc}{chapter}{Supplementary Materials}
-\chapter*{\huge\centering Supplementary Materials}  
+% \phantomsection
+% \addcontentsline{toc}{chapter}{Supplementary Materials}
+% \chapter*{\huge\centering Supplementary Materials}  
+
+\begin{appendices}
 
 \input{Appendices/Chap2-Appendix}
 
@@ -774,6 +780,7 @@ long = Photosystem II}
 
 \input{Appendices/Chap4-Appendix}
 
+\end{appendices}
 
 \end{document}                       
 %% Done.
