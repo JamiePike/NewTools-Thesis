@@ -1,20 +1,31 @@
 % Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
 % \usepackage{multirow}
 % \usepackage{graphicx}
 % \usepackage{lscape}
-\begin{table}[h!]
+%\begin{landscape}
+\begin{table}[]
 \centering
-\captionsetup{width=\linewidth} 
-\caption[\Ac{tnau}\acf{tef} \acf{ncbi} and Fusariod-ID MSLT database searches.]{\textbf{Best hits of extracted \acf{tef} sequences from the \acf{tnau} isolate \textit{de novo} assemblies using \ac{ncbi} web-BLASTN.}}
+\renewcommand{\arraystretch}{2}
+\caption[\Ac{tnau}\acf{tef} \acf{ncbi} and Fusariod-ID MSLT database searches.]{{\textbf{Best hits of extracted \acf{tef} sequences from the \acf{tnau} isolate \textit{de novo} assemblies using \ac{ncbi} web-BLASTN.}}}
 \label{tab:Tef1-NCBIdb}
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{cccc}
-\multicolumn{1}{l}{\multirow{2}{*}{\textbf{TNAU Isolate Assembly}}} & \multicolumn{3}{c}{\textbf{NCBI database}}                                        \\ \cline{2-4} 
-\multicolumn{1}{l}{}                                       & Hit 1                    & Hit 2                    & Hit 3                       \\ \hline
-\textbf{S6}                            & \textit{F. o.} isolate 170 & \textit{F. o.} f. sp. \textit{koae} & \textit{F. o.} f. sp. \textit{dianthi} \\
-\textbf{S16}                                               & \textit{F. sacchari} CBS:147.25   & \textit{F. sacchari} NRLL 66326  & \textit{F. globosum} CBS:428.97      \\
-\textbf{S32}                             & \textit{F. fujikuroi} I1.3        & \textit{F. fujikuroi} IMI 58289   & \textit{F. fujikuroi} Augusto2 \\ 
-\textbf{SY-2} & \textit{F. fujikuroi} I1.3        & \textit{F. fujikuroi} IMI 58289   & \textit{F. fujikuroi} Augusto2 \\ \hline     
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccccc@{}}
+\toprule
+\textbf{}                       & \textbf{}                    & \textbf{S6}                            & \textbf{S16}                    & \textbf{S32}                    & \textbf{SY-2}                   \\ \midrule
+\multirow{4}{*}{\textbf{Hit 1}} & \textbf{Description}         & \textit{F. o.} isolate 170             & \textit{F. sacchari} CBS:147.25 & \textit{F. fujikuroi} I1.3      & \textit{F. fujikuroi} I1.3      \\
+                                & \textbf{Percentage Identity} & 99.49\%                                & 99.57\%                         & 97.83\%                         & 95.75\%                         \\
+                                & \textbf{Query Coverage}      & 100\%                                  & 100\%                           & 100\%                           & 100\%                           \\
+                                & \textbf{NCBI Accession}      & CP052890.1                             & MT010988.1                      & CP023106.1                      & CP023106.1                      \\ \midrule
+\multirow{4}{*}{\textbf{Hit 2}} & \textbf{Description}         & \textit{F. o.} f. sp. \textit{koae}    & \textit{F. sacchari} NRLL 66326 & \textit{F. fujikuroi} IMI 58289 & \textit{F. fujikuroi} IMI 58289 \\
+                                & \textbf{Percentage Identity} & 99.42\%                                & 99.49\%                         & 97.83\%                         & 95.74\%                         \\
+                                & \textbf{Query Coverage}      & 100\%                                  & 100\%                           & 100\%                           & 100\%                           \\
+                                & \textbf{NCBI Accession}      & CP052908.1                             & MN193868.1                      & HF679028.1                      & HF679028.1                      \\ \midrule
+\multirow{4}{*}{\textbf{Hit 3}} & \textbf{Description}         & \textit{F. o.} f. sp. \textit{dianthi} & \textit{F. globosum} CBS:428.97 & \textit{F. fujikuroi} Augusto2  & \textit{F. fujikuroi} Augusto2  \\
+                                & \textbf{Percentage Identity} & 99.13\%                                & 96.82\%                         & 97.77\%                         & 95.67\%                         \\
+                                & \textbf{Query Coverage}      & 100\%                                  & 100\%                           & 100\%                           & 100\%                           \\
+                                & \textbf{NCBI Accession}      & LT841231.1                             & MT010993.1                      & CP023094.1                      & CP023094.1                      \\ \bottomrule
 \end{tabular}%
 }
 \end{table}
+%\end{landscape}
